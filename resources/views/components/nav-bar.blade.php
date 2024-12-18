@@ -1,12 +1,12 @@
 <nav>
     <div>
-        <a href="{{route('accueil')}}">Accueil</a>
-        <a href="{{route('voyage.index')}}">Destination</a>
-
-        <a href="#">Profil</a>
-        <a href="#">A propos</a>
-        <a href="#">Contact</a>
-
+        <div class="menu">
+            <a href="{{route('accueil')}}" class="active">Accueil</a>
+            <a href="{{route('voyage.index')}}">Destination</a>
+            <a href="#">Profil</a>
+            <a href="#">A propos</a>
+            <a href="#">Contact</a>
+        </div>
         @auth
             {{Auth::user()->name}}
             <a href="{{route("logout")}}"
@@ -15,7 +15,7 @@
                 @csrf
             </form>
         @else
-            <a href="{{route("login")}}">Connexion</a>
+            <a href="{{route("login")}}" class="connection">Connexion</a>
         @endauth
     </div>
 </nav>
