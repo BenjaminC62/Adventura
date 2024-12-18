@@ -3,6 +3,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Etape;
 use App\Models\Media;
+use App\Models\Voyage;
 use Illuminate\Http\Request;
 
 class EtapeController extends Controller
@@ -12,11 +13,12 @@ class EtapeController extends Controller
         return view('etape.index', compact('etapes'));
     }
 
-    public function create(){
-        return view('etape.create');
+    public function create($voyage_id){
+        $voyage = Voyage::find($voyage_id);
+        return view('etape.create', compact('voyage'));
     }
 
-    public function store(Request $request){
+    public function store(Request $request, $voyage_id){
         $request->validate([
             'titre' => 'required|string|max:255',
             'description' => 'required|string',
@@ -26,14 +28,17 @@ class EtapeController extends Controller
             'media_url' => 'required|url',
         ]);
 
+
         $etape = new Etape();
         $etape->titre = $request->titre;
         $etape->description = $request->description;
         $etape->resume = $request->resume;
         $etape->debut = $request->debut;
         $etape->fin = $request->fin;
-        $etape->voyage_id = 1;
+        $etape->voyage_id = $voyage_id;
         $etape->save();
+
+
 
         $media = new Media();
         $media->titre = $request->titre;
@@ -42,7 +47,7 @@ class EtapeController extends Controller
         $media->etape_id = $etape->id;
         $media->save();
 
-        return redirect()->route('etape.index');
+        return redirect()->route('voyage.show', $etape->voyage_id);
     }
 
     public function show(Etape $etape){
@@ -54,13 +59,28 @@ class EtapeController extends Controller
         return view('etape.edit', compact('etape'));
     }
 
-    public function update(Request $request, Etape $etape){
-        $etape->update($request->all());
+    public function update(Request $request, $etape_id){
+
+        $request->validate([
+            'titre' => 'required|string|max:255',
+            'description' => 'required|string',
+            'media_url' => 'required|url',
+        ]);
+
+        $etape = Etape::find($etape_id);
+        $etape->titre = $request->titre;
+        $etape->description = $request->description;
+        $etape->save();
+
+        $media = Media::where('etape_id', $etape->id)->first();
+        $media->url = $request->media_url;
+        $media->save();
+
         return redirect()->route('etape.show', $etape);
     }
 
     public function destroy(Etape $etape){
         $etape->delete();
-        return redirect()->route('etape.index');
+        return redirect()->route('voyage.show' , $etape->voyage_id);
     }
 }

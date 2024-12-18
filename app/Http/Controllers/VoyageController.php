@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Etape;
 use App\Models\Voyage;
 use Illuminate\Http\Request;
 
@@ -62,7 +63,8 @@ class VoyageController extends Controller
     public function show(string $id)
     {
         $voyage = Voyage::findOrFail($id);
-        return view('voyage.show', ['voyage' => $voyage]);
+        $etapes = Etape::where('voyage_id', $id)->get();
+        return view('voyage.show', ['voyage' => $voyage, 'etapes' => $etapes]);
     }
 
     /**

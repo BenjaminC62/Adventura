@@ -1,5 +1,5 @@
 
-    <form method="POST" action="{{ route('etape.store') }}">
+    <form method="POST" action="{{ route('etape.store', ['voyage_id' => $voyage->id]) }}">
         @csrf
         <div>
             <label for="titre">Titre de l'étape</label>

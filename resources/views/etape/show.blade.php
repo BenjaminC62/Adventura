@@ -1,9 +1,9 @@
 
-    <div class="etape">
+    <div>
         <h1>{{ $etape->titre }}</h1>
         <p>{{ $etape->description }}</p>
         @if(!empty($media->url))
-            <div class="media">
+            <div >
                 <img src="{{ $media->url }}" alt="Media for {{ $etape->titre }}">
             </div>
         @endif
@@ -15,5 +15,5 @@
             @method('DELETE')
             <button type="submit">Supprimer</button>
         </form>
-        <a href="{{ route('etape.index') }}" class="btn btn-secondary">Retour à la liste</a>
+        <a href="{{ route('voyage.show', $etape->voyage_id) }}" >Retour à la liste</a>
     </div>

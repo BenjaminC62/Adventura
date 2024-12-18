@@ -26,3 +26,7 @@ Route::get('/dashboard', function () {
 Route::resource('etape', EtapeController::class);
 
 Route::resource('voyage', VoyageController::class);
+
+Route::post('/etape/create/{voyage_id}', [EtapeController::class, 'store'])->name('etape.store');
+
+Route::get('/etapes/create/{voyage_id}', [EtapeController::class, 'create'])->name('etape.create');
