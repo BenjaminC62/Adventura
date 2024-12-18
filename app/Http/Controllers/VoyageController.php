@@ -114,4 +114,16 @@ class VoyageController extends Controller
         $voyage->delete();
         return redirect()->route('voyage.index');
     }
+
+    public function like($voyageId, $userId)
+    {
+        $voyage = Voyage::findOrFail($voyageId);
+        $user = User::findOrFail($userId);
+        
+        if (!$voyage->likes()->where('user_id', $userId)->exists()) {
+            $voyage->likes()->attach($user);
+        }
+
+        return redirect()->route('voyage.index');
+    }
 }

@@ -19,5 +19,9 @@
             @method('DELETE')
             <button type="submit">Supprimer</button>
         </form>
+        <form action="{{ route('voyage.like', ['voyage' => $voyage->id, 'user' => Auth::id()]) }}" method="GET">
+            @csrf
+            <button type="submit" class="btn btn-primary">Like</button>
+        </form>
     @endif
 @endforeach
