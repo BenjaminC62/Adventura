@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Etape;
 use App\Models\Voyage;
+use Illuminate\Foundation\Auth\User;
 use Illuminate\Http\Request;
 
 class VoyageController extends Controller
@@ -63,8 +64,9 @@ class VoyageController extends Controller
     public function show(string $id)
     {
         $voyage = Voyage::findOrFail($id);
+        $user = User::findOrFail($id);
         $etapes = Etape::where('voyage_id', $id)->get();
-        return view('voyage.show', ['voyage' => $voyage, 'etapes' => $etapes]);
+        return view('voyage.show', ['voyage' => $voyage, 'user' => $user, 'etapes' => $etapes]);
     }
 
     /**
