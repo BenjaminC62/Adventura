@@ -1,0 +1,36 @@
+.profile-user-banner {
+    width: 1200px;
+    height: 240px;
+    border-radius: 20px;
+    object-fit: cover;
+    position: relative;
+}
+
+.profile-user-container {
+    position: relative;
+    width: 1200px;
+    height: 240px;
+}
+
+.profile-user-info {
+    position: absolute;
+    bottom: -42px;
+    left: 74px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.profile-user-info img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 3px solid white;
+}
+
+.profile-user-info h1 {
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
