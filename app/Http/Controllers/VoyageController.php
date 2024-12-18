@@ -56,7 +56,8 @@ class VoyageController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $voyage = Voyage::findOrFail($id);
+        return view('voyage.show', ['voyage' => $voyage]);
     }
 
     /**
@@ -64,7 +65,8 @@ class VoyageController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $voyage = Voyage::findOrFail($id);
+        return view('voyage.edit', ['voyage' => $voyage]);
     }
 
     /**
@@ -72,7 +74,24 @@ class VoyageController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $request->validate([
+            'titre' => 'required',
+            'description' => 'required',
+            'resume' => 'required',
+            'continent' => 'required',
+            'visuel' => 'required',
+        ]);
+
+        $voyage = Voyage::findOrFail($id);
+
+        $voyage->titre = $request->titre;
+        $voyage->description = $request->description;
+        $voyage->resume = $request->resume;
+        $voyage->continent = $request->continent;
+        $voyage->visuel = $request->visuel;
+        $voyage->save();
+
+        return redirect()->route('voyage.index');
     }
 
     /**
