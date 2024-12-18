@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Avis;
+use App\Models\User;
+use App\Models\Voyage;
+use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Http\Request;
 
 class AvisController extends Controller
@@ -18,25 +21,29 @@ class AvisController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create($voyageId, $userId): Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
     {
-        return view('avis.create');
+        $voyage = Voyage::findOrFail($voyageId);
+        $user = User::findOrFail($userId);
+        return view('avis.create', compact('voyage', 'user'));
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(Request $request, $voyageId, $userId)
     {
-        $request -> validate([
+        $request->validate([
             'contenu' => 'required|string|max:255',
         ]);
 
         $avis = new Avis();
         $avis->contenu = $request->contenu;
+        $avis->user_id = $userId;
+        $avis->voyage_id = $voyageId;
         $avis->save();
 
-        return redirect()->route('voyage.index');
+        return redirect()->route('voyage.show', $voyageId);
     }
 
     /**

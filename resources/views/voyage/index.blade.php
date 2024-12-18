@@ -9,8 +9,3 @@
         <p>{{ $voyage->visuel }}</p>
     @endif
 @endforeach
-
-<h2>Avis</h2>
-@foreach($voyage->avis as $avis)
-    <p>{{ $avis->contenu }}</p>
-@endforeach

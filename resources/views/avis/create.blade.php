@@ -1,5 +1,5 @@
-<div> <!-- Pour flex s'il faut -->
-    <form action="{{ route('avis.store') }}" method="POST">
+<div>
+    <form action="{{ route('avis.store', ['voyage' => $voyage->id, 'user' => $user->id]) }}" method="POST">
         @csrf
         <ul>
             <li>

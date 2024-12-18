@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Voyage;
+use Illuminate\Foundation\Auth\User;
 use Illuminate\Http\Request;
 
 class VoyageController extends Controller
@@ -57,8 +58,8 @@ class VoyageController extends Controller
     public function show(string $id)
     {
         $voyage = Voyage::findOrFail($id);
-        $avis = Voyage::with('avis')->findOrFail($id);
-        return view('voyage.show', ['voyage' => $voyage]);
+        $user = User::findOrFail($id);
+        return view('voyage.show', ['voyage' => $voyage, 'user' => $user]);
     }
 
     /**

@@ -13,3 +13,15 @@
     <button type="submit">Supprimer</button>
 </form>
 <a href="{{ route('voyage.index') }}">Retour</a>
+
+<h2>Avis</h2>
+@foreach($voyage->avis as $avis)
+    <p>{{ $avis->contenu }}</p>
+    <a href="{{ route('avis.edit', $avis->id) }}">Modifier</a>
+    <form action="{{ route('avis.destroy', $avis->id) }}" method="POST" style="display:inline;">
+        @csrf
+        @method('DELETE')
+        <button type="submit">Supprimer</button>
+    </form>
+@endforeach
+<a href="{{ route('avis.create', ['voyage' => $voyage->id, 'user' => $user->id]) }}" class="btn btn-primary">Ajouter un avis</a>
