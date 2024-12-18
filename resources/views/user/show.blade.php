@@ -24,7 +24,7 @@
         @endforeach
     </ul>
     <h2>Avatar</h2>
-    <img src="{{ $user->avatar }}" alt="Avatar de {{ $user->name }}" style="width: 150px; height: 150px;">
+    <img src="{{ $user->avatar }}" alt="Avatar de {{ $user->name }}" style="width: 150px; height: 150px; border-radius: 50%">
 
     <a href="{{ route('users.index') }}" class="btn btn-secondary">Retour</a>
     <a href="{{ route('users.edit', $user->id) }}" class="btn btn-warning">Modifier</a>
