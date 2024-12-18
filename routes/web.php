@@ -36,9 +36,12 @@ Route::post('voyage/{voyage}/avis/{user}', [AvisController::class, 'store'])->na
 Route::put('voyage/{voyage}/avis/{avis}', [AvisController::class, 'update'])->name('avis.update');
 Route::delete('voyage/{voyage}/avis/{avis}', [AvisController::class, 'destroy'])->name('avis.destroy');
 
+
 Route::resource('users', UserController::class);
 
 Route::post('/etape/create/{voyage_id}', [EtapeController::class, 'store'])->name('etape.store');
+
+
 
 Route::get('/etapes/create/{voyage_id}', [EtapeController::class, 'create'])->name('etape.create');
 Route::get('/equipes', function () {
