@@ -1,6 +1,18 @@
+:root{
+    --brown: #B77F66;
+    --light: #FAEDCA;
+    --green: #5B7553;
+    --orange: #F58B00;
+}
+
+
 html {
+    font-size: 16px;
     position: relative;
-    min-height: 100%;
+    background-color: var(--brown);
+    padding: 16px 32px;
+    overflow-x : hidden;
+    min-height: 100vh;
 }
 body {
     /* Margin bottom by footer height */
@@ -12,6 +24,9 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: var(--light);
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
 }
 
 footer {
@@ -32,4 +47,142 @@ footer {
     border: 1px solid #333;
     border-radius: 5px;
     box-shadow: #333333 2px 2px 2px;
+}
+
+nav {
+    color: #B77F66;
+}
+
+
+:root{
+    --brown: #B77F66;
+    --light: #FAEDCA;
+    --green: #5B7553;
+    --orange: #F58B00;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--brown);
+    padding: 16px 32px;
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+/* HEADER */
+
+
+
+.menu{
+    background-color: var(--light);
+    border-radius: 20px 20px 0 0;
+}
+
+.menu-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
+    padding: 16px 0;
+}
+
+.logo-header{
+    margin-bottom: -120px;
+    position: relative;
+    z-index: 10;
+    margin-left: 30px;
+}
+
+
+.logo-header img{
+    border: 1px solid black; /* DELETE  */
+}
+
+.menu-item{
+    font-size: 1.2rem;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+}
+
+.user-info .btn-header {
+    margin-left: 10px; /* Ajustez la marge selon vos besoins */
+}
+
+
+.menu-header ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 64px;
+}
+
+
+.container{
+    width: 1538px;
+    margin: 0 auto;
+}
+
+h1{
+    font-size: 4rem;
+    line-height: 1.2;
+    text-transform: uppercase;
+}
+
+p{
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+ul{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+    color: var(--brown);
+    text-transform: capitalize;
+}
+
+.btn{
+    border-radius: 30px;
+    padding: 12px 24px;
+    font-weight: bold;
+}
+
+.btn-stroke-brown{
+    color: var(--brown);
+    border: 2px solid var(--brown);
+}
+
+input{
+    border: none;
+    background: none;
+    font-size: 1.2rem;;
+}
+
+input:focus{
+    outline: none;
+}
+
+button{
+    border: none;
+    background: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+footer{
+    background-color: var(--light);
+    padding: 16px 0;
+    border-radius: 0 0 20px 20px;
 }

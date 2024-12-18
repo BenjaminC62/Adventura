@@ -17,7 +17,10 @@
     @show
 </head>
 <body>
-<x-nav-bar></x-nav-bar>
+<header class="menu">
+    <x-nav-bar></x-nav-bar>
+</header>
+
 <main>
     <div> {{$slot}}</div>
 </main>
