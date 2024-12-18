@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CommentairesController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -22,3 +23,4 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->name("dashboard") -> middleware('auth');
 
+Route::resource('commentaires', CommentairesController::class);
