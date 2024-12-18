@@ -120,7 +120,11 @@ class VoyageController extends Controller
         $user = User::findOrFail(auth()->id());
         $voyage = Voyage::findOrFail($id);
 
-        $voyage->likes()->attach($user->id);
+        if ($voyage->likes()->where('user_id', $user->id)->exists()) {
+            $voyage->likes()->detach($user->id);
+        } else {
+            $voyage->likes()->attach($user->id);
+        }
 
         return redirect()->route('voyage.show', ['voyage' => $voyage->id]);
     }
