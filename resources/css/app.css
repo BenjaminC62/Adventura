@@ -94,8 +94,6 @@ body{
 }
 
 .logo-header{
-    margin-bottom: -120px;
-    position: relative;
     z-index: 10;
     margin-left: 30px;
 }
@@ -103,6 +101,8 @@ body{
 
 .logo-header img{
     border: 1px solid black; /* DELETE  */
+    width: 100px;
+    height: 100px;
 }
 
 .menu-item{
