@@ -6,6 +6,7 @@ use App\Models\Avis;
 use App\Models\User;
 use App\Models\Voyage;
 use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 
 class AvisController extends Controller
@@ -31,7 +32,7 @@ class AvisController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request, $voyageId, $userId)
+    public function store(Request $request, $voyageId, $userId): RedirectResponse
     {
         $request->validate([
             'contenu' => 'required|string|max:255',
@@ -55,20 +56,28 @@ class AvisController extends Controller
     }
 
     /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
-    }
-
-    /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function edit($id)
     {
-        //
+        $avis = Avis::findOrFail($id);
+        $voyage = $avis->voyage;
+        return view('avis.edit', ['voyage' => $voyage, 'avis' => $avis]);
     }
+
+    public function update(Request $request, $voyageId, $avisId)
+    {
+        $request->validate([
+            'contenu' => 'required|string|max:255',
+        ]);
+
+        $avis = Avis::findOrFail($avisId);
+        $avis->contenu = $request->contenu;
+        $avis->save();
+
+        return redirect()->route('voyage.show', $voyageId)->with('success', 'Avis mis à jour avec succès');
+    }
+
 
     /**
      * Remove the specified resource from storage.
