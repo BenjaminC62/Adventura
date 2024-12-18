@@ -21,7 +21,7 @@ class VoyageController extends Controller
      */
     public function create()
     {
-        //
+        return view('voyage.create');
     }
 
     /**
@@ -29,7 +29,31 @@ class VoyageController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'titre' => 'required',
+            'description' => 'required',
+            'resume' => 'required',
+            'continent' => 'required',
+            'visuel' => 'required',
+        ]);
+
+        $voyage = new Voyage();
+        $voyage->titre = $request->titre;
+        $voyage->description = $request->description;
+        $voyage->resume = $request->resume;
+        $voyage->continent = $request->continent;
+        //$voyage->user_id = auth()->id();
+        $voyage->user_id = 2;
+        $voyage->en_ligne = 1;
+        if ($request->hasFile('visuel') && $request->file('visuel')->isValid()) {
+            $file = $request->file('visuel');
+            $path = $file->store('visuels', 'public');
+            $voyage->visuel = $path;
+        }
+
+        $voyage->save();
+
+        return redirect()->route('voyage.index');
     }
 
     /**
@@ -37,7 +61,8 @@ class VoyageController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $voyage = Voyage::findOrFail($id);
+        return view('voyage.show', ['voyage' => $voyage]);
     }
 
     /**
@@ -45,7 +70,8 @@ class VoyageController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $voyage = Voyage::findOrFail($id);
+        return view('voyage.edit', ['voyage' => $voyage]);
     }
 
     /**
@@ -53,7 +79,28 @@ class VoyageController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $request->validate([
+            'titre' => 'required',
+            'description' => 'required',
+            'resume' => 'required',
+            'continent' => 'required',
+            'visuel' => 'required',
+        ]);
+
+        $voyage = Voyage::findOrFail($id);
+
+        $voyage->titre = $request->titre;
+        $voyage->description = $request->description;
+        $voyage->resume = $request->resume;
+        $voyage->continent = $request->continent;
+        if ($request->hasFile('visuel') && $request->file('visuel')->isValid()) {
+            $file = $request->file('visuel');
+            $path = $file->store('visuels', 'public');
+            $voyage->visuel = $path;
+        }
+        $voyage->save();
+
+        return redirect()->route('voyage.index');
     }
 
     /**
@@ -61,6 +108,8 @@ class VoyageController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $voyage = Voyage::findOrFail($id);
+        $voyage->delete();
+        return redirect()->route('voyage.index');
     }
 }

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\EtapeController;
+use App\Http\Controllers\VoyageController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -23,3 +24,5 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->name("dashboard") -> middleware('auth');
 Route::resource('etape', EtapeController::class);
+
+Route::resource('voyage', VoyageController::class);
