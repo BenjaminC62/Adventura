@@ -1,10 +1,11 @@
 <!-- resources/views/equipes.blade.php -->
-
-<div class="team-info">
-    <h1>Notre Équipe</h1>
-    <ul>
+<x-app>
+    <div class="team-info">
+        <h1>Notre Équipe</h1>
         @foreach($teamMembers as $member)
-            <li>{{ $member }}</li>
+            <div class="team-member">
+                <h2>{{ $member }}</h2>
+            </div>
         @endforeach
-    </ul>
-</div>
+    </div>
+</x-app>
