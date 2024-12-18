@@ -1,6 +1,18 @@
+:root{
+    --brown: #B77F66;
+    --light: #FAEDCA;
+    --green: #5B7553;
+    --orange: #F58B00;
+}
+
+
 html {
+    font-size: 16px;
     position: relative;
-    min-height: 100%;
+    background-color: var(--brown);
+    padding: 16px 32px;
+    overflow-x : hidden;
+    min-height: 100vh;
 }
 body {
     /* Margin bottom by footer height */
@@ -12,6 +24,8 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: var(--light);
+    border-radius: 20px 20px 20px 20px;
 }
 
 footer {
@@ -32,4 +46,8 @@ footer {
     border: 1px solid #333;
     border-radius: 5px;
     box-shadow: #333333 2px 2px 2px;
+}
+
+nav {
+    color: #B77F66;
 }
