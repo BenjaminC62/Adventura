@@ -41,3 +41,17 @@ Route::resource('users', UserController::class);
 Route::post('/etape/create/{voyage_id}', [EtapeController::class, 'store'])->name('etape.store');
 
 Route::get('/etapes/create/{voyage_id}', [EtapeController::class, 'create'])->name('etape.create');
+Route::get('/equipes', function () {
+    $teamMembers = [
+        'PEUVREL Noah - Taches effectuées : Création du logo',
+        'DALMASSO Mathéo - Taches effectuées : Création du CRUD de la page d\'accueil',
+        'LEPERS Sharleen - Taches effectuées : Créatiion du scénario de la vidéo en anglais',
+        'CORNET Benjamin - Taches effectuées : Création du CRUD pour les commentaires',
+        'DELTOUR Léa - Taches effectuées : Itinéraire du voyage',
+        'LESTRIEZ Jade - Taches effectuées : Maquette figma',
+        'CAILLIERET Simon - Taches effectuées : Création du CRUD pour les avis',
+        'MOREL Mathias - Taches effectuées : Création du CRUD pour les profils (users) / creation du mcd et mld avec puml',
+    ];
+    return view('equipes', compact('teamMembers'));
+})->name('equipes');
+
