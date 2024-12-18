@@ -10,13 +10,17 @@
         </div>
     </div>
 
-    <div>
+    <div class="profile-voyages-users">
         <ul class="profile-voyage">
             @foreach($voyages as $voyage)
-                <li>{{ $voyage->titre }}</li>
+                <li>
+                    <img src="{{ $voyage->visuel }}" alt="Visuel de {{ $voyage->titre }}">
+                    <span>{{ $voyage->titre }}</span>
+                </li>
             @endforeach
         </ul>
     </div>
+
 
 
     <h2 class="profile-like">Voyages aimés</h2>
@@ -32,7 +36,7 @@
             <li>{{ $comment->content }} ({{ $comment->created_at }})</li>
         @endforeach
     </ul>
-    
+
     <a href="{{ route('users.index') }}" class="btn btn-secondary">Retour</a>
     <a href="{{ route('users.edit', $user->id) }}" class="btn btn-warning">Modifier</a>
     <form action="{{ route('users.destroy', $user->id) }}" method="POST" style="display:inline;">
