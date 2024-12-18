@@ -24,14 +24,14 @@ Route::get('/dashboard', function () {
 
 Route::get('/equipes', function () {
     $teamMembers = [
-        'PEUVREL Noah',
-        'DALMASSO Mathéo',
-        'LEPERS Sharleen',
-        'CORNET Benjamin',
-        'DELTOUR Léa',
-        'LESTRIEZ Jade',
-        'CAILLIERET Simon',
-        'MOREL Mathias',
+        'PEUVREL Noah - Taches effectuées : Création du logo',
+        'DALMASSO Mathéo - Taches effectuées : Création du CRUD de la page d\'accueil',
+        'LEPERS Sharleen - Taches effectuées : Créatiion du scénario de la vidéo en anglais',
+        'CORNET Benjamin - Taches effectuées : Création du CRUD pour les commentaires',
+        'DELTOUR Léa - Taches effectuées : Itinéraire du voyage',
+        'LESTRIEZ Jade - Taches effectuées : Maquette figma',
+        'CAILLIERET Simon - Taches effectuées : Création du CRUD pour les avis',
+        'MOREL Mathias - Taches effectuées : Création du CRUD pour les profils (users) / creation du mcd et mld avec puml',
     ];
     return view('equipes', compact('teamMembers'));
 })->name('equipes');
