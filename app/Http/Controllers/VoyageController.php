@@ -57,6 +57,7 @@ class VoyageController extends Controller
     public function show(string $id)
     {
         $voyage = Voyage::findOrFail($id);
+        $avis = Voyage::with('avis')->findOrFail($id);
         return view('voyage.show', ['voyage' => $voyage]);
     }
 

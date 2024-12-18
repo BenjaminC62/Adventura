@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\CommentairesController;
+use App\Http\Controllers\AvisController;
 use App\Http\Controllers\VoyageController;
 use Illuminate\Support\Facades\Route;
 
@@ -25,4 +25,5 @@ Route::get('/dashboard', function () {
 })->name("dashboard") -> middleware('auth');
 
 Route::resource('voyage', VoyageController::class);
-Route::resource('commentaires', CommentairesController::class);
+
+Route::resource('avis', AvisController::class);

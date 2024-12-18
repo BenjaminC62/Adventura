@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Avis;
 use Illuminate\Http\Request;
 
-class CommentairesController extends Controller
+class AvisController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -19,7 +20,7 @@ class CommentairesController extends Controller
      */
     public function create()
     {
-        //
+        return view('avis.create');
     }
 
     /**
@@ -27,7 +28,15 @@ class CommentairesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request -> validate([
+            'contenu' => 'required|string|max:255',
+        ]);
+
+        $avis = new Avis();
+        $avis->contenu = $request->contenu;
+        $avis->save();
+
+        return redirect()->route('voyage.index');
     }
 
     /**
