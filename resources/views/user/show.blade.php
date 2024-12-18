@@ -23,6 +23,9 @@
             <li>{{ $comment->content }} ({{ $comment->created_at }})</li>
         @endforeach
     </ul>
+    <h2>Avatar</h2>
+    <img src="{{ $user->avatar }}" alt="Avatar de {{ $user->name }}" style="width: 150px; height: 150px;">
+
     <a href="{{ route('users.index') }}" class="btn btn-secondary">Retour</a>
     <a href="{{ route('users.edit', $user->id) }}" class="btn btn-warning">Modifier</a>
     <form action="{{ route('users.destroy', $user->id) }}" method="POST" style="display:inline;">
