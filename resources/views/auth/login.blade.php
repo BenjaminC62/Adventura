@@ -1,3 +1,4 @@
+<!-- Updated login.blade.php -->
 <x-app>
     <div class="login-page">
         <div class="login-container">
@@ -22,6 +23,7 @@
                         <button type="submit" class="btn btn-primary">Se connecter</button>
                     </div>
                 </form>
+                <p class="form-link">Pas encore inscrit? <a href="{{ route('register') }}">Inscrivez-vous</a></p>
             </div>
         </div>
     </div>
