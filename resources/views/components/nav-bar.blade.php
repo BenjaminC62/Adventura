@@ -1,3 +1,4 @@
+<!-- Updated nav-bar.blade.php -->
 <div class="menu-container">
     <div class="logo-header">
         <img src="https://placehold.co/200" alt="Logo">
@@ -22,12 +23,10 @@
         </div>
     @else
         <div class="btn-header">
-            @if(Route::currentRouteName() == 'login')
-                <a href="{{route("register")}}" class="btn btn-stroke-brown">Inscription</a>
-            @elseif(Route::currentRouteName() == 'register')
+            @if(Route::currentRouteName() != 'login')
                 <a href="{{route("login")}}" class="btn btn-stroke-brown">Connexion</a>
-            @else
-                <a href="{{route("login")}}" class="btn btn-stroke-brown">Connexion</a>
+            @endif
+            @if(Route::currentRouteName() != 'register')
                 <a href="{{route("register")}}" class="btn btn-stroke-brown">Inscription</a>
             @endif
         </div>

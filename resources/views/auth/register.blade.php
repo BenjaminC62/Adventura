@@ -1,3 +1,4 @@
+<!-- Updated register.blade.php -->
 <x-app>
     <div class="register-page">
         <div class="register-container">
@@ -32,6 +33,7 @@
                         <button type="submit" class="btn btn-primary">S'inscrire</button>
                     </div>
                 </form>
+                <p class="form-link">Déjà enregistré? <a href="{{ route('login') }}">Connectez-vous</a></p>
             </div>
         </div>
     </div>
