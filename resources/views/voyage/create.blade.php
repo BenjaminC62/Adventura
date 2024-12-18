@@ -10,6 +10,6 @@
     <label for="continent">Continent</label>
     <input type="text" name="continent" id="continent">
     <label for="visuel">Visuel</label>
-    <input type="text" name="visuel" id="visuel">
+    <input type="file" name="visuel" id="visuel">
     <button type="submit">Envoyer</button>
 </form>

@@ -44,8 +44,13 @@ class VoyageController extends Controller
         $voyage->continent = $request->continent;
         //$voyage->user_id = auth()->id();
         $voyage->user_id = 2;
-        $voyage->en_ligne = 0;
-        $voyage->visuel = $request->visuel;
+        $voyage->en_ligne = 1;
+        if ($request->hasFile('visuel') && $request->file('visuel')->isValid()) {
+            $file = $request->file('visuel');
+            $path = $file->store('visuels', 'public');
+            $voyage->visuel = $path;
+        }
+
         $voyage->save();
 
         return redirect()->route('voyage.index');
@@ -88,7 +93,11 @@ class VoyageController extends Controller
         $voyage->description = $request->description;
         $voyage->resume = $request->resume;
         $voyage->continent = $request->continent;
-        $voyage->visuel = $request->visuel;
+        if ($request->hasFile('visuel') && $request->file('visuel')->isValid()) {
+            $file = $request->file('visuel');
+            $path = $file->store('visuels', 'public');
+            $voyage->visuel = $path;
+        }
         $voyage->save();
 
         return redirect()->route('voyage.index');
@@ -99,6 +108,8 @@ class VoyageController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $voyage = Voyage::findOrFail($id);
+        $voyage->delete();
+        return redirect()->route('voyage.index');
     }
 }
