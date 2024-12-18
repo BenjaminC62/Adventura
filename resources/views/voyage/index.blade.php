@@ -19,9 +19,16 @@
             @method('DELETE')
             <button type="submit">Supprimer</button>
         </form>
-        <form action="{{ route('voyage.like', ['voyage' => $voyage->id, 'user' => Auth::id()]) }}" method="GET">
+        <form action="{{ route('voyage.like', $voyage->id) }}" method="POST">
             @csrf
-            <button type="submit" class="btn btn-primary">Like</button>
+            <button type="submit">
+                @if($voyage->likes()->where('user_id', auth()->id())->exists())
+                    Unlike
+                @else
+                    Like
+                @endif
+            </button>
         </form>
+        <p>{{ $voyage->likes()->count() }} likes</p>
     @endif
 @endforeach

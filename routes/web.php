@@ -33,4 +33,4 @@ Route::post('voyage/{voyage}/avis/{user}', [AvisController::class, 'store'])->na
 Route::put('voyage/{voyage}/avis/{avis}', [AvisController::class, 'update'])->name('avis.update');
 Route::delete('voyage/{voyage}/avis/{avis}', [AvisController::class, 'destroy'])->name('avis.destroy');
 
-Route::get('voyage/{voyage}/like/{user}', [VoyageController::class, 'like'])->name('voyage.like');
+Route::post('voyage/{voyage}/like', [VoyageController::class, 'like'])->name('voyage.like');

@@ -115,15 +115,13 @@ class VoyageController extends Controller
         return redirect()->route('voyage.index');
     }
 
-    public function like($voyageId, $userId)
+    public function like($id)
     {
-        $voyage = Voyage::findOrFail($voyageId);
-        $user = User::findOrFail($userId);
+        $user = User::findOrFail(auth()->id());
+        $voyage = Voyage::findOrFail($id);
 
-        if (!$voyage->likes()->where('user_id', $userId)->exists()) {
-            $voyage->likes()->attach($user);
-        }
+        $voyage->likes()->attach($user->id);
 
-        return redirect()->route('voyage.index');
+        return redirect()->route('voyage.show', ['voyage' => $voyage->id]);
     }
 }
