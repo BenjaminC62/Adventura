@@ -19,9 +19,17 @@
             <form id="logout" action="{{route("logout")}}" method="post">
                 @csrf
             </form>
+        </div>
+    @else
+        <div class="btn-header">
+            @if(Route::currentRouteName() == 'login')
+                <a href="{{route("register")}}" class="btn btn-stroke-brown">Inscription</a>
+            @elseif(Route::currentRouteName() == 'register')
+                <a href="{{route("login")}}" class="btn btn-stroke-brown">Connexion</a>
             @else
                 <a href="{{route("login")}}" class="btn btn-stroke-brown">Connexion</a>
-            @endauth
+                <a href="{{route("register")}}" class="btn btn-stroke-brown">Inscription</a>
+            @endif
         </div>
+    @endauth
 </div>
-
