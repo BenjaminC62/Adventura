@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\Voyage;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -15,7 +16,8 @@ class UserController extends Controller
 
     public function show($id) {
         $user = User::with(['mesVoyages', 'likes', 'avis'])->findOrFail($id);
-        return view('user.show', compact('user'));
+        $voyages = Voyage::where('user_id', $id)->get();
+        return view('user.show', compact('user', 'voyages'));
     }
 
     public function edit($id) {
