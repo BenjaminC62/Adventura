@@ -11,5 +11,7 @@
     <input type="text" name="continent" id="continent">
     <label for="visuel">Visuel</label>
     <input type="file" name="visuel" id="visuel">
+    <label for="publier">Publier</label>
+    <input type="checkbox" name="publier" id="publier">
     <button type="submit">Envoyer</button>
 </form>
