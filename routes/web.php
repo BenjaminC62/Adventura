@@ -22,3 +22,17 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->name("dashboard") -> middleware('auth');
 
+Route::get('/equipes', function () {
+    $teamMembers = [
+        'PEUVREL Noah',
+        'DALMASSO Mathéo',
+        'LEPERS Sharleen',
+        'CORNET Benjamin',
+        'DELTOUR Léa',
+        'LESTRIEZ Jade',
+        'CAILLIERET Simon',
+        'MOREL Mathias',
+    ];
+    return view('equipes', compact('teamMembers'));
+})->name('equipes');
+
