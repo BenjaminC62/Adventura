@@ -1,3 +1,4 @@
+<x-nav-bar></x-nav-bar>
 <h1>Creation d'un voyage</h1>
 <form action="{{ route('voyage.store') }}" method="POST" enctype="multipart/form-data">
     @csrf
