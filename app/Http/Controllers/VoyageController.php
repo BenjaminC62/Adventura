@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Etape;
 use App\Models\Voyage;
 use Illuminate\Foundation\Auth\User;
 use Illuminate\Http\Request;
@@ -36,6 +37,7 @@ class VoyageController extends Controller
             'resume' => 'required',
             'continent' => 'required',
             'visuel' => 'required',
+            'publier' => 'required',
         ]);
 
         $voyage = new Voyage();
@@ -43,9 +45,8 @@ class VoyageController extends Controller
         $voyage->description = $request->description;
         $voyage->resume = $request->resume;
         $voyage->continent = $request->continent;
-        //$voyage->user_id = auth()->id();
-        $voyage->user_id = 2;
-        $voyage->en_ligne = 1;
+        $voyage->user_id = auth()->id();
+        $voyage->en_ligne = $request->publier;
         if ($request->hasFile('visuel') && $request->file('visuel')->isValid()) {
             $file = $request->file('visuel');
             $path = $file->store('visuels', 'public');
@@ -64,7 +65,8 @@ class VoyageController extends Controller
     {
         $voyage = Voyage::findOrFail($id);
         $user = User::findOrFail($id);
-        return view('voyage.show', ['voyage' => $voyage, 'user' => $user]);
+        $etapes = Etape::where('voyage_id', $id)->get();
+        return view('voyage.show', ['voyage' => $voyage, 'user' => $user, 'etapes' => $etapes]);
     }
 
     /**

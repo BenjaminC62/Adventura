@@ -1,3 +1,4 @@
+<x-nav-bar></x-nav-bar>
 <h1>Creation d'un voyage</h1>
 <form action="{{ route('voyage.store') }}" method="POST" enctype="multipart/form-data">
     @csrf
@@ -11,5 +12,7 @@
     <input type="text" name="continent" id="continent">
     <label for="visuel">Visuel</label>
     <input type="file" name="visuel" id="visuel">
+    <label for="publier">Publier</label>
+    <input type="checkbox" name="publier" id="publier">
     <button type="submit">Envoyer</button>
 </form>

@@ -9,6 +9,22 @@
 @else
     <img src="{{$voyage->visuel}}" width="210px" height="210px" alt="image_create">
 @endif
+
+<a href="{{ route('etape.create', ['voyage_id' => $voyage->id]) }}">Créer une étape</a>
+
+@if($etapes->count() > 0)
+    <h2>Les étapes de ce voyage</h2>
+    @foreach($etapes as $etape)
+        <div>
+            <h3>{{ $etape->titre }}</h3>
+            <p>{{ $etape->resume }}</p>
+            <a href="{{ route('etape.show', $etape->id) }}">Voir plus</a>
+        </div>
+    @endforeach
+@else
+    <p>Aucune étape pour ce voyage</p>
+@endif
+
 <a href="{{ route('voyage.edit', $voyage->id) }}">Modifier</a>
 <form action="{{ route('voyage.destroy', $voyage->id) }}" method="POST">
     @csrf
