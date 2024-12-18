@@ -1,10 +1,24 @@
-@extends("templates.app")
+<x-app>
 
-@section('content')
-    <div style="display: flex;align-items: center; justify-content: center">
-        <div class="app-info">
-            Le marathon du WEB 2024 !!!
+
+
+<!-- Section Principale -->
+<main>
+    <!-- Image -->
+    <div class="hero">
+        <img src="marathon.png" alt="Paysage de voyage">
+
+        <!-- Carte "GUIDE DE VOYAGE" -->
+        <div class="card">
+            <h2>GUIDE DE VOYAGE</h2>
+            <p>Texte explicatif</p>
+        </div>
+
+        <!-- Barre de Recherche -->
+        <div class="search-container">
+            <input type="text" placeholder="Recherche une destination">
+            <button>🔍</button>
         </div>
     </div>
-
-@endsection
+</main>
+</x-app>

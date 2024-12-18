@@ -1,19 +1,21 @@
-<div>
-    <a href="{{route('accueil')}}">Accueil</a>
-    <a href="{{route('voyage.index')}}">Destination</a>
 
-    <a href="#">Profil</a>
-    <a href="#">A propos</a>
-    <a href="#">Contact</a>
+    <nav>
+        <div class="menu">
+            <a href="#" class="active">Accueil</a>
+            <a href="#">Destination</a>
+            <a href="#">Profil</a>
+            <a href="#">A propos</a>
+            <a href="#">Contact</a>
+        </div>
+        @auth
+            {{Auth::user()->name}}
+            <a href="{{route("logout")}}"
+               onclick="document.getElementById('logout').submit(); return false;">Logout</a>
+            <form id="logout" action="{{route("logout")}}" method="post">
+                @csrf
+            </form>
+        @else
+            <a href="{{route("login")}}" class="connection">Connexion</a>
+        @endauth
+    </nav>
 
-    @auth
-        {{Auth::user()->name}}
-        <a href="{{route("logout")}}"
-           onclick="document.getElementById('logout').submit(); return false;">Logout</a>
-        <form id="logout" action="{{route("logout")}}" method="post">
-            @csrf
-        </form>
-    @else
-        <a href="{{route("login")}}">Connexion</a>
-    @endauth
-</div>
