@@ -31,3 +31,4 @@ Route::resource('avis', AvisController::class);
 Route::get('voyage/{voyage}/avis/create/{user}', [AvisController::class, 'create'])->name('avis.create');
 Route::post('voyage/{voyage}/avis/{user}', [AvisController::class, 'store'])->name('avis.store');
 Route::put('voyage/{voyage}/avis/{avis}', [AvisController::class, 'update'])->name('avis.update');
+Route::delete('voyage/{voyage}/avis/{avis}', [AvisController::class, 'destroy'])->name('avis.destroy');

@@ -82,8 +82,11 @@ class AvisController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy($voyageId, $avisId): RedirectResponse
     {
-        //
+        $avis = Avis::findOrFail($avisId);
+        $avis->delete();
+
+        return redirect()->route('voyage.show', $voyageId)->with('success', 'Avis supprimé avec succès');
     }
 }

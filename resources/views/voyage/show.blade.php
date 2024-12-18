@@ -18,7 +18,7 @@
 @foreach($voyage->avis as $avis)
     <p>{{ $avis->contenu }}</p>
     <a href="{{ route('avis.edit', $avis->id) }}">Modifier</a>
-    <form action="{{ route('avis.destroy', $avis->id) }}" method="POST" style="display:inline;">
+    <form action="{{ route('avis.destroy', ['voyage' => $voyage->id, 'avis' => $avis->id]) }}" method="POST" style="margin-top: 10px;">
         @csrf
         @method('DELETE')
         <button type="submit">Supprimer</button>
