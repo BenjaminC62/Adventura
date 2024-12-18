@@ -1,11 +1,28 @@
+<x-app>
+    <div class="login-page">
+        <div class="login-container">
+            <div class="login-form">
+                <h1 class="title">CONNEXION</h1>
+                <p class="login-desc">Veuillez entrer vos informations pour vous connecter.</p>
 
-@section('content')
+                <form action="{{ route('login') }}" method="POST">
+                    @csrf
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="Ex: lola.lejeune@gmail.com" required>
+                    </div>
 
-    <form action="{{route("login")}}" method="post">
-        @csrf
-        <input type="email" name="email" required placeholder="Email" /><br />
-        <input type="password" name="password" required placeholder="password" /><br />
-        Remember me<input type="checkbox" name="remember"   /><br />
-        <input type="submit" /><br />
-    </form>
-@endsection
+                    <div class="form-group">
+                        <label for="password">Mot de passe</label>
+                        <input type="password" id="password" name="password" placeholder="Mot de passe" required>
+                    </div>
+
+                    <div class="form-buttons">
+                        <button type="reset" class="btn btn-secondary">Annuler</button>
+                        <button type="submit" class="btn btn-primary">Se connecter</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</x-app>
