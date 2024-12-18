@@ -1,6 +1,6 @@
 ## Invitation aux voyages
 
-Groupe test but24_groupeTT
+Groupe test but24_groupe7-marathon-404-creatifs
 
 ## Version initiale
 
