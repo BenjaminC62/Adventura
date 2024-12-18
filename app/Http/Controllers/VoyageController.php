@@ -119,7 +119,7 @@ class VoyageController extends Controller
     {
         $voyage = Voyage::findOrFail($voyageId);
         $user = User::findOrFail($userId);
-        
+
         if (!$voyage->likes()->where('user_id', $userId)->exists()) {
             $voyage->likes()->attach($user);
         }
