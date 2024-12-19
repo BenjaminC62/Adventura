@@ -2,7 +2,7 @@
     <main>
         <div class="contact-content">
             <div class="van-contact">
-                <img src="{{ asset('storage/images/van-contact.jpg') }}" alt="Van Contact Image">
+                <img src="{{ Vite::asset('resources/images/van-contact.jpg') }}" alt="Van Contact Image">
             </div>
             <div class="contact-card">
                 <form method="POST" action="{{ route('contact') }}">
