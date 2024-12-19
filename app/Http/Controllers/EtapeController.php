@@ -4,10 +4,13 @@ namespace App\Http\Controllers;
 use App\Models\Etape;
 use App\Models\Media;
 use App\Models\Voyage;
+use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Http\Request;
 
 class EtapeController extends Controller
 {
+    use AuthorizesRequests;
+
     public function index(){
         $etapes = Etape::all();
         return view('etape.index', compact('etapes'));

@@ -1,5 +1,5 @@
 <!-- resources/views/user/edit.blade.php -->
-
+<x-app>
 <h1>Modifier le profil de {{ $user->name }}</h1>
 
 <form action="{{ route('users.update', $user->id) }}" method="POST">
@@ -22,3 +22,4 @@
 
     <button type="submit" class="btn btn-primary">Enregistrer les modifications</button>
 </form>
+</x-app>
