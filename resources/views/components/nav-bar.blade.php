@@ -1,13 +1,12 @@
-<!-- Updated nav-bar.blade.php -->
 <div class="menu-container">
     <div class="logo-header">
-        <img src="https://placehold.co/200" alt="Logo">
+        <img src="{{ asset('images/Logo-maraton.svg') }}" alt="Logo">
     </div>
     <nav class="menu-header">
         <ul>
             <li class="menu-item"><a href="{{route('accueil')}}" class="link menu-link">accueil</a></li>
             <li class="menu-item"><a href="{{route('voyage.index')}}" class="link menu-link">destinations</a></li>
-            <li class="menu-item"><a href="{{route('users.index')}}" class="link menu-link">profil</a></li>
+            <li class="menu-item"><a href="{{ Auth::check() ? route('users.show', Auth::user()->id) : route('users.index') }}" class="link menu-link">profil</a></li>
             <li class="menu-item"><a href="{{route('equipes')}}" class="link menu-link">à propos</a></li>
             <li class="menu-item"><a href="{{route('contact')}}" class="link menu-link">contact</a></li>
         </ul>
