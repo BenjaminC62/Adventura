@@ -131,3 +131,36 @@
     color: var(--brown);
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
+
+
+.video-page {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #FAECDA;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.video-page h1 {
+    text-align: center;
+    color: var(--green);
+    font-size: 3rem; /* Increased font size */
+    margin-bottom: 20px;
+}
+
+.video-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.video-container video {
+    max-width: 100%;
+    border-radius: 8px;
+}
+
+.lorem-text {
+    font-size: 1.2em;
+    color: #5A3921;
+    line-height: 1.6;
+}
