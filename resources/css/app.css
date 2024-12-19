@@ -348,8 +348,8 @@ main {
 }
 
 .photo-accueil{
-    width: 540px;
-    height: 400px;
+    width: 764px;
+    height: 607px;
     z-index: 1;
     position: relative;
     margin-right: 525px;
@@ -363,6 +363,8 @@ main {
     box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.5);
     top: 250px;
     border-radius: 20px;
+    padding-right: 130px;
+    padding-left: 263px;
 }
 
 
