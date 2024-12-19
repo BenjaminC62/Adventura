@@ -1,5 +1,5 @@
 <x-app>
-    <h1>Liste des voyage</h1>
+    <h1>Liste des voyages</h1>
     <a href="{{ route('voyage.create') }}">Créer un voyage</a>
     @foreach($voyages as $voyage)
         @if($voyage->en_ligne==1)
