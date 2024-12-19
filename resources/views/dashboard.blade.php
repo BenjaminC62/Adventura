@@ -1,9 +1,6 @@
-@extends("templates.app")
-
-<x-app-layout>
-@section("content")
+<x-app>
     <div class="app-info">
         Ma page perso
     </div>
-</x-app-layout>
-@endsection
+</x-app>
+

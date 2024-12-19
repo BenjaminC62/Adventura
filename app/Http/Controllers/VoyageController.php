@@ -37,6 +37,7 @@ class VoyageController extends Controller
             'resume' => 'required',
             'continent' => 'required',
             'visuel' => 'required',
+            'publier' => 'required',
         ]);
 
         $voyage = new Voyage();
@@ -44,9 +45,8 @@ class VoyageController extends Controller
         $voyage->description = $request->description;
         $voyage->resume = $request->resume;
         $voyage->continent = $request->continent;
-        //$voyage->user_id = auth()->id();
-        $voyage->user_id = 2;
-        $voyage->en_ligne = 1;
+        $voyage->user_id = auth()->id();
+        $voyage->en_ligne = $request->publier;
         if ($request->hasFile('visuel') && $request->file('visuel')->isValid()) {
             $file = $request->file('visuel');
             $path = $file->store('visuels', 'public');
@@ -89,6 +89,7 @@ class VoyageController extends Controller
             'resume' => 'required',
             'continent' => 'required',
             'visuel' => 'required',
+            'public' => 'required',
         ]);
 
         $voyage = Voyage::findOrFail($id);
@@ -102,6 +103,7 @@ class VoyageController extends Controller
             $path = $file->store('visuels', 'public');
             $voyage->visuel = $path;
         }
+        $voyage->en_ligne = $request->public;
         $voyage->save();
 
         return redirect()->route('voyage.index');
@@ -115,5 +117,19 @@ class VoyageController extends Controller
         $voyage = Voyage::findOrFail($id);
         $voyage->delete();
         return redirect()->route('voyage.index');
+    }
+
+    public function like($id)
+    {
+        $user = User::findOrFail(auth()->id());
+        $voyage = Voyage::findOrFail($id);
+
+        if ($voyage->likes()->where('user_id', $user->id)->exists()) {
+            $voyage->likes()->detach($user->id);
+        } else {
+            $voyage->likes()->attach($user->id);
+        }
+
+        return redirect()->route('voyage.show', ['voyage' => $voyage->id]);
     }
 }
