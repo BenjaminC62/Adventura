@@ -37,7 +37,7 @@ class VoyageController extends Controller
             'resume' => 'required',
             'continent' => 'required',
             'visuel' => 'required',
-            'publier' => 'required',
+            'public' => 'required',
         ]);
 
         $voyage = new Voyage();
@@ -46,7 +46,7 @@ class VoyageController extends Controller
         $voyage->resume = $request->resume;
         $voyage->continent = $request->continent;
         $voyage->user_id = auth()->id();
-        $voyage->en_ligne = $request->publier;
+        $voyage->en_ligne = $request->public;
         if ($request->hasFile('visuel') && $request->file('visuel')->isValid()) {
             $file = $request->file('visuel');
             $path = $file->store('visuels', 'public');
