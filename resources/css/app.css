@@ -1129,6 +1129,8 @@ input.voyage-text-area-edit {
     padding: 20px 0;
     position: relative;
     white-space: nowrap;
+    width: 100%;
+    height: 385px;
 }
 
 .timeline::before {
@@ -1136,22 +1138,37 @@ input.voyage-text-area-edit {
     position: absolute;
     height: 6px;
     background-color: #D3C1A5;
-    top: 50%;
+    top: 70.5%;
     left: 0;
     transform: translateY(-50%);
     z-index: 1;
-    width: calc(100% + 3100px);
-    min-width: 100vw;
+    width: 100%;
+    pointer-events: none;
+}
+
+.timeline-item:last-child::before {
+    content: '';
+    position: absolute;
+    height: 6px;
+    background-color: #D3C1A5;
+    top: 70.5%;
+    left: 0;
+    transform: translateY(-50%);
+    z-index: 1;
     pointer-events: none;
 }
 
 .timeline-item {
     display: inline-block;
     position: relative;
-    width: 700px;
-    margin-right: 20px;
+    width: 800px;
+    height: 500px;
+    margin-right: -50px;
     vertical-align: top;
+    box-sizing: border-box; /* Ensure padding and border are included in the width and height */
+    overflow: hidden; /* Hide overflow content */
 }
+
 
 .timeline-item::after {
     content: '';
@@ -1169,10 +1186,15 @@ input.voyage-text-area-edit {
 
 .timeline-item:nth-child(odd) .timeline-content {
     margin-top: 0px;
+    width: 200px;
+
 }
 
 .timeline-item:nth-child(even) .timeline-content {
-    margin-top: 230px;
+    margin-top: 280px;
+}
+.timeline-item:last-child {
+    margin-right: 0; /* Remove margin for the last item */
 }
 
 .timeline-date {
@@ -1182,9 +1204,7 @@ input.voyage-text-area-edit {
     text-align: center;
 }
 
-.timeline-item .timeline-content {
-    pointer-events: none;
-}
+
 
 .timeline-item .city {
     pointer-events: auto;
@@ -1223,6 +1243,20 @@ input.voyage-text-area-edit {
 .timeline-content a:hover {
     color: #B77F66;
 }
+.timeline-content img {
+    width: 100%; /* Ensure the image fits the width of the container */
+    height: 100%; /* Ensure the image fits the height of the container */
+    object-fit: cover; /* Cover the container while maintaining aspect ratio */
+    border-radius: 5px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.timeline-content img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
 
 .btn-voyage {
     background-color: #8D5C43;
@@ -1239,6 +1273,7 @@ input.voyage-text-area-edit {
     width: 150px;
     height: 50px;
     line-height: 30px;
+    margin-bottom: 15px;
 }
 
 
@@ -1272,6 +1307,28 @@ input.voyage-text-area-edit {
     background-color: #B77F66;
     color: white;
     text-decoration: none;
+}
+.btn-voyage, .btn-avis {
+    transition: transform 0.3s ease;
+    font-weight: bold;
+}
+
+.btn-voyage:hover, .btn-avis:hover {
+    transform: scale(1.1);
+}
+.grand-titre-voyage {
+    text-align: center;
+    margin-bottom: 30px;
+    position: relative;
+    color: var(--brown);
+    font-weight: bold;
+}
+.etape-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+    text-align: center;
 }
 .avis {
     position: relative;

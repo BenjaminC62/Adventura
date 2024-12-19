@@ -16,8 +16,8 @@ class Etape extends Model {
         return $this->belongsTo(Voyage::class);
     }
 
-    public function media() {
-        return $this->HasMany(Media::class);
+    public function medias() {
+        return $this->HasMany(Media::class, 'etape_id');
     }
 
     public function suivant() {

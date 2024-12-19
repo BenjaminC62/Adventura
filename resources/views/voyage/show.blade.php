@@ -15,7 +15,7 @@
             </div>
         </div>
         <div class="comment-actions">
-            <a href="{{ route('avis.create', ['voyage' => $voyage->id, 'user' => $user->id]) }}" class="btn-avis">Ajouter un avis</a>
+            <a href="{{ route('avis.create', ['voyage' => $voyage->id, 'user' => $user->id]) }}" class="btn-avis">Ajouter commentaire</a>
             <a href="#avis" class="btn-avis">Voir commentaires</a>
         </div>
         @if($etapes->count() > 0)
@@ -24,10 +24,12 @@
                 @foreach($etapes as $etape)
                     <div class="timeline-item">
                         <div class="timeline-content">
-                            <h3 class="city" data-id="{{ $etape->id }}">{{ $etape->titre }}</h3>
-                            <p>{{ $etape->resume }}</p>
-                            <p>{{ $etape->debut->format('d/m/Y') }} - {{ $etape->fin->format('d/m/Y') }}</p>
-                            <a href="{{ route('etape.show', $etape->id) }}">Voir plus</a>
+                            <h3 class="etape-title">{{ $etape->titre }}</h3>
+                            @if($etape->medias->isNotEmpty())
+                                <a href="{{ route('etape.show', $etape->id) }}">
+                                    <img src="{{ $etape->medias->first()->url }}" alt="Media">
+                                </a>
+                            @endif
                         </div>
                     </div>
                 @endforeach
