@@ -1,3 +1,4 @@
+<!-- resources/views/voyage/show.blade.php -->
 <x-app>
     <div class="voyage-detail">
         <h1>Détail du voyage : {{ $voyage->titre }}</h1>
@@ -22,7 +23,7 @@
                 @foreach($etapes as $etape)
                     <div class="timeline-item">
                         <div class="timeline-content">
-                            <h3>{{ $etape->titre }}</h3>
+                            <h3 class="city" data-id="{{ $etape->id }}">{{ $etape->titre }}</h3>
                             <p>{{ $etape->resume }}</p>
                             <p>{{ $etape->debut->format('d/m/Y') }} - {{ $etape->fin->format('d/m/Y') }}</p>
                             <a href="{{ route('etape.show', $etape->id) }}">Voir plus</a>
