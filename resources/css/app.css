@@ -921,50 +921,6 @@ input.voyage-text-area-edit {
 .error-message .illustration {
     margin-top: 20px;
 }
-
-.form-etape-edit {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.form-group {
-    display: flex;
-    flex-direction: column;
-}
-
-.etape-text-area-edit {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 1rem;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-.submit-section {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-}
-
-.submit-section button {
-    padding: 10px 20px;
-    background-color: #8D5C43;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease-in-out;
-}
-
-
-
-.submit-section button:hover {
-    background-color: #6B422F;
-}
-
 .titre-modif-etape {
     text-align: center;
     margin-bottom: 30px;
@@ -996,4 +952,65 @@ input.voyage-text-area-edit {
 .titre-modif-etape > h1 {
     color: var(--brown);
     font-size: 1.5rem;
+}
+.form-etape-edit {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    gap: 20px;
+    width: 600px;
+    margin: auto;
+}
+
+.form-etape-edit .form-group {
+    margin-bottom: 20px;
+}
+
+.form-etape-edit label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-size: 1rem;
+    color: #5A3921; /* Couleur uniforme pour tous les labels */
+}
+
+.form-etape-edit input[type="text"],
+.form-etape-edit textarea,
+.form-etape-edit input[type="url"],
+.form-etape-edit input[type="date"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #D3C1A5;
+    border-radius: 5px;
+    background-color: #FAECDA;
+    font-size: 1rem;
+    color: #B77F66;
+    box-sizing: border-box;
+    height: 40px; /* Hauteur uniforme pour tous les champs */
+}
+
+.form-etape-edit textarea {
+    resize: none; /* Désactive la redimension verticale pour conserver l'uniformité */
+}
+
+.form-etape-edit .submit-section {
+    grid-column: 1 / span 2; /* Occupe deux colonnes /
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px; / Ajoute un espacement avec les champs */
+}
+
+.form-etape-edit button[type="submit"] {
+    background-color: var(--brown);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.form-etape-edit button[type="submit"]:hover {
+    background-color: var(--orange);
 }
