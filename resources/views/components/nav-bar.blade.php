@@ -1,3 +1,4 @@
+<!-- Updated nav-bar.blade.php -->
 <div class="menu-container">
     <div class="logo-header">
         <img src="https://placehold.co/200" alt="Logo">
@@ -19,9 +20,15 @@
             <form id="logout" action="{{route("logout")}}" method="post">
                 @csrf
             </form>
-            @else
-                <a href="{{route("login")}}" class="btn btn-stroke-brown">Connexion</a>
-            @endauth
         </div>
+    @else
+        <div class="btn-header">
+            @if(Route::currentRouteName() != 'login')
+                <a href="{{route("login")}}" class="btn btn-stroke-brown">Connexion</a>
+            @endif
+            @if(Route::currentRouteName() != 'register')
+                <a href="{{route("register")}}" class="btn btn-stroke-brown">Inscription</a>
+            @endif
+        </div>
+    @endauth
 </div>
-

@@ -5,8 +5,8 @@
 
     <h2>Voyages réalisés</h2>
     <ul>
-        @foreach($user->mesVoyages as $voyage)
-            <li>{{ $voyage->title }} ({{ $voyage->date }})</li>
+        @foreach($voyages  as $voyage)
+            <li>{{ $voyage->titre }})</li>
         @endforeach
     </ul>
 
