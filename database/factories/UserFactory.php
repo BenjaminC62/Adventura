@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Enums\Role;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
@@ -30,6 +31,7 @@ class UserFactory extends Factory
             'password' => static::$password ??= Hash::make('password'),
             'avatar' => env('APP_URL') . '/storage/images/no-profile-picture.png',
             'remember_token' => Str::random(10),
+            'role' => Role::USER,
         ];
     }
 

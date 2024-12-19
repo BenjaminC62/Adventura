@@ -4,11 +4,14 @@ namespace App\Http\Controllers;
 
 use App\Models\Etape;
 use App\Models\Voyage;
+use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Auth\User;
 use Illuminate\Http\Request;
 
 class VoyageController extends Controller
 {
+    use AuthorizesRequests;
+
     /**
      * Display a listing of the resource.
      */
@@ -23,6 +26,9 @@ class VoyageController extends Controller
      */
     public function create()
     {
+        if(!$this->authorize('create', Voyage::class)) {
+            return redirect()->route('voyage.index');
+        }
         return view('voyage.create');
     }
 
@@ -74,6 +80,9 @@ class VoyageController extends Controller
      */
     public function edit(string $id)
     {
+        if(!$this->authorize('update', Voyage::class)) {
+            return redirect()->route('voyage.index');
+        }
         $voyage = Voyage::findOrFail($id);
         return view('voyage.edit', ['voyage' => $voyage]);
     }
@@ -114,6 +123,9 @@ class VoyageController extends Controller
      */
     public function destroy(string $id)
     {
+        if(!$this->authorize('delete', Voyage::class)) {
+            return redirect()->route('voyage.index');
+        }
         $voyage = Voyage::findOrFail($id);
         $voyage->delete();
         return redirect()->route('voyage.index');
