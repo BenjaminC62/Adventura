@@ -139,10 +139,11 @@ body{
     margin: 0 auto;
 }
 
-h1{
+h1 {
     font-size: 4rem;
     line-height: 1.2;
     text-transform: uppercase;
+    text-align: center; /* Centrer le texte */
 }
 
 p{
@@ -681,7 +682,40 @@ footer{
     color: #FFF;
 }
 
+.form-voyage-edit{
+    color: black;
+}
 
+.voyage-text-area-edit {
+    background-color: #B77F663D;
+    border-radius: 2px;
+}
+
+/* Styles spécifiques au formulaire de voyage */
+.form-voyage-edit {
+    display: grid;
+    grid-template-areas:
+        "image title"
+        "image description"
+        "image resume"
+        "continents public"
+        "continents button";
+    grid-template-columns: 1.5fr 1fr;
+    gap: 20px;
+    padding: 20px;
+    width: 900px;
+    margin: auto;
+}
+
+.voyage-text-area-edit {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--brown);
+    border-radius: 5px;
+    background-color: #FAEDCA; /* Couleur claire */
+    font-size: 1rem;
+    color: var(--brown);
+}
 .user-list img {
     width: 60px;
     height: 60px;
@@ -689,6 +723,136 @@ footer{
     margin-right: 20px;
     border: 3px solid var(--brown);
     transition: transform 0.3s ease, border-color 0.3s ease;
+}
+.voyage-text-area-edit {
+    width: 100%;
+    min-height: 100px; /* Ajustez la hauteur selon vos besoins */
+    padding: 10px;
+    border: 1px solid #D3C1A5;
+    border-radius: 5px;
+    background-color: #FAECDA;
+    font-size: 1rem;
+    color: #B77F66;
+    resize: vertical; /* Permettre à l'utilisateur de redimensionner si besoin */
+}
+
+.voyage-text-area-edit::placeholder {
+    color: #B77F66; /* Placeholder dans le thème */
+    opacity: 0.7;
+}
+
+/* Section image principale */
+.image-placeholder {
+    grid-area: image;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px dashed var(--brown);
+    background-color: #FAEDCA;
+    width: 100%;
+    height: 200px;
+    border-radius: 10px;
+    font-size: 2rem;
+    color: var(--brown);
+    cursor: pointer;
+}
+
+/* Champs texte */
+label {
+    font-size: 1rem;
+    font-weight: bold;
+    color: var(--brown);
+    margin-bottom: 5px;
+    display: block;
+}
+
+#titre, #description, #resume {
+    grid-area: title;
+    grid-area: description;
+    grid-area: resume;
+}
+
+/* Section continents */
+.continents {
+    grid-area: continents;
+    display: flex;
+    gap: 10px;
+    justify-content: start;
+}
+
+.continent-checkbox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.continent-checkbox input {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+/* Case Public */
+.public-section {
+    grid-area: public;
+    display: flex;
+    align-items: center;
+}
+
+.public-section input {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+/* Bouton d'envoi */
+.submit-section {
+    grid-area: button;
+    display: flex;
+    justify-content: flex-end;
+}
+
+button[type="submit"] {
+    background-color: var(--brown);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: var(--orange);
+}
+
+.form-group {
+    margin-bottom: 20px; /* Ajoute de l'espace entre les sections */
+}
+
+label {
+    display: block; /* Force l'affichage du label sur une ligne séparée */
+    margin-bottom: 5px; /* Espacement entre le label et le champ */
+    font-weight: bold; /* Optionnel : met en valeur le label */
+}
+
+textarea.voyage-text-area-edit,
+input.voyage-text-area-edit {
+    width: 100%; /* Champ qui s'étend sur toute la largeur */
+    min-height: 100px; /* Assurez une hauteur confortable pour les zones de texte */
+    padding: 10px;
+    border: 1px solid #D3C1A5;
+    border-radius: 5px;
+    background-color: #FAECDA;
+    font-size: 1rem;
+    color: #B77F66;
+    resize: vertical; /* Permet à l'utilisateur de redimensionner */
+}
+
+.titre-modif-voyage > h1 {
+    color: var(--brown);
 }
 
 .user-list li:hover img {
@@ -731,3 +895,4 @@ footer{
 .error-message .illustration {
     margin-top: 20px;
 }
+

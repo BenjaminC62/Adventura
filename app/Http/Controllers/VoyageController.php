@@ -89,6 +89,7 @@ class VoyageController extends Controller
             'resume' => 'required',
             'continent' => 'required',
             'visuel' => 'required',
+            'public' => 'required',
         ]);
 
         $voyage = Voyage::findOrFail($id);
@@ -102,6 +103,7 @@ class VoyageController extends Controller
             $path = $file->store('visuels', 'public');
             $voyage->visuel = $path;
         }
+        $voyage->en_ligne = $request->public;
         $voyage->save();
 
         return redirect()->route('voyage.index');
