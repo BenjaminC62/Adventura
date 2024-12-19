@@ -20,16 +20,16 @@ Route::get('/test-vite', function () {
 
 Route::get('/home', function () {
     return view('dashboard');
-})->name("home") -> middleware('auth');
+})-> middleware('auth')->name("home") ;
 
 Route::get('/dashboard', function () {
     return view('dashboard');
-})->name("dashboard") -> middleware('auth');
+}) -> middleware('auth')->name("dashboard");
 Route::resource('etape', EtapeController::class);
 
 Route::resource('voyage', VoyageController::class);
 
-Route::resource('avis', AvisController::class);
+Route::resource('avis', AvisController::class)-> middleware('auth');
 
 Route::get('voyage/{voyage}/avis/create/{user}', [AvisController::class, 'create'])->name('avis.create');
 Route::post('voyage/{voyage}/avis/{user}', [AvisController::class, 'store'])->name('avis.store');
@@ -40,7 +40,6 @@ Route::delete('voyage/{voyage}/avis/{avis}', [AvisController::class, 'destroy'])
 Route::resource('users', UserController::class);
 
 Route::post('/etape/create/{voyage_id}', [EtapeController::class, 'store'])->name('etape.store');
-
 
 
 Route::get('/etapes/create/{voyage_id}', [EtapeController::class, 'create'])->name('etape.create');
@@ -62,4 +61,4 @@ Route::get('/video', function () {
     return view('video');
 })->name('video');
 
-Route::post('voyage/{voyage}/like', [VoyageController::class, 'like'])->name('voyage.like');
+Route::post('voyage/{voyage}/like', [VoyageController::class, 'like'])-> middleware('auth')->name('voyage.like');

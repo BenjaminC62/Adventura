@@ -4,10 +4,12 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use App\Models\Voyage;
+use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
+    use AuthorizesRequests;
 
     public function index() {
         $users = User::all();
