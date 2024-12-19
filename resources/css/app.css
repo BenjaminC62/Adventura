@@ -45,12 +45,27 @@ body {
     margin: 0; /* Supprime toute marge inutile */
 }
 
-.logo-header img {
+.logo-header img{
+    border: 1px solid black;
     width: 100px;
     height: 100px;
 }
 
-.menu-header ul {
+.menu-item{
+    font-size: 1.2rem;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+}
+
+.user-info .btn-header {
+    margin-left: 10px;
+}
+
+
+.menu-header ul{
     display: flex;
     justify-content: center; /* Centre les éléments horizontalement */
     align-items: center;
@@ -103,4 +118,310 @@ main {
     background-color: var(--light);
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
+}
+
+/* Scoped styles for the register page */
+.register-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.register-form {
+    width: 100%;
+    max-width: 500px;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #F6E7D6;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    border: 2px solid #B77F66;
+}
+
+.register-form .title {
+    font-size: 2.5rem;
+    color: #8D5C43;
+    margin-bottom: 10px;
+}
+
+.register-form .register-desc {
+    font-size: 1rem;
+    margin-bottom: 20px;
+    color: #4F4F4F;
+}
+
+.register-form .form-group {
+    margin-bottom: 20px;
+}
+
+.register-form label {
+    display: block;
+    margin-bottom: 5px;
+    color: #8D5C43;
+}
+
+.register-form input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #D3C1A5;
+    border-radius: 5px;
+    background-color: #FAECDA;
+    font-size: 1rem;
+    color: #B77F66;
+}
+
+.register-form .form-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.register-form .btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.register-form .btn-secondary {
+    background-color: #D3C1A5;
+    color: #4F4F4F;
+}
+
+.register-form .btn-primary {
+    background-color: #FF8C00;
+    color: #FFF;
+}
+
+/* Scoped styles for the login page */
+.login-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.login-form {
+    width: 100%;
+    max-width: 500px;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #F6E7D6;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    border: 2px solid #B77F66;
+}
+
+.login-form .title {
+    font-size: 2.5rem;
+    color: #8D5C43;
+    margin-bottom: 10px;
+}
+
+.login-form .login-desc {
+    font-size: 1rem;
+    margin-bottom: 20px;
+    color: #4F4F4F;
+}
+
+.login-form .form-group {
+    margin-bottom: 20px;
+}
+
+.login-form label {
+    display: block;
+    margin-bottom: 5px;
+    color: #8D5C43;
+}
+
+.login-form input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #D3C1A5;
+    border-radius: 5px;
+    background-color: #FAECDA;
+    font-size: 1rem;
+    color: #B77F66;
+}
+
+.login-form .form-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.login-form .btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.login-form .btn-secondary {
+    background-color: #D3C1A5;
+    color: #4F4F4F;
+}
+
+.login-form .btn-primary {
+    background-color: #FF8C00;
+    color: #FFF;
+}
+
+
+/* Styles for the team page */
+.team-info {
+    background: linear-gradient(135deg, #FDF3E7, #F7E1C9);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    margin: 40px auto;
+    max-width: 900px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.team-info:hover {
+    transform: translateY(-5px);
+}
+
+.team-info h1 {
+    font-size: 2.5rem;
+    color: #8D5C43;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.team-member {
+    background: #FFFFFF;
+    border: 1px solid #E8D4B8;
+    border-radius: 12px;
+    padding: 20px;
+    margin: 15px 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.team-member:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    background: #FF8C00;
+    color: #FFF;
+}
+
+.team-member h2 {
+    font-size: 1.5rem;
+    color: #8D5C43;
+    margin-bottom: 10px;
+    font-family: 'Georgia', serif;
+    transition: color 0.3s ease;
+}
+
+.team-member:hover h2 {
+    color: #FFF;
+}
+
+.team-member p {
+    font-size: 1rem;
+    color: #555;
+    margin: 0;
+    font-style: italic;
+}
+
+
+
+.accueil{
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.photo-accueil{
+    width: 540px;
+    height: 400px;
+    z-index: 1;
+    position: relative;
+    margin-right: 525px;
+}
+
+.welcome-guide{
+    z-index: 1000;
+    position: absolute;
+    left: 47%;
+    background-color: var(--light);
+    box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.5);
+    top: 250px;
+    border-radius: 20px;
+}
+
+
+/* Styles for the 404 error page */
+.error-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    position: relative;
+}
+
+.error-page::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.error-message {
+    position: relative;
+    z-index: 2;
+    background-color: rgba(250, 236, 218, 0.9);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    border: 2px solid #B77F66;
+}
+
+.error-message h1 {
+    font-size: 3rem;
+    color: #8D5C43;
+    margin-bottom: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.error-message p {
+    font-size: 1.5rem;
+    color: #4F4F4F;
+    margin-bottom: 20px;
+}
+
+.error-message .btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    background-color: #FF8C00;
+    color: #FFF;
+    font-size: 1rem;
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.error-message .illustration {
+    margin-top: 20px;
 }
