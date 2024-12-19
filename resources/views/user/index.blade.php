@@ -1,4 +1,5 @@
 <x-app>
+    <div class="users-list-container">
     <div class="titre-users">
         <h1>Liste des utilisateurs</h1>
     </div>
@@ -11,4 +12,5 @@
             </li>
         @endforeach
     </ul>
+    </div>
 </x-app>

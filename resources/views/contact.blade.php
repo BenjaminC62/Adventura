@@ -1,5 +1,5 @@
 <x-app>
-    <main>
+    <main class="contact-container-main">
         <div class="contact-content">
             <div class="van-contact">
                 <img src="{{ Vite::asset('resources/images/van-contact.jpg') }}" alt="Van Contact Image">
