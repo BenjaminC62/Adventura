@@ -9,41 +9,102 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 html {
     font-size: 16px;
+    position: relative;
+    background-color: var(--brown);
+    padding: 16px 32px;
+    overflow-x : hidden;
+    min-height: 100vh;
+}
+body {
+    /* Margin bottom by footer height */
+    margin-bottom: 30px;
+}
+
+main {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--light);
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+
+    /* Set the fixed height of the footer here */
+    height: 30px;
+    background-color: #f5f5f5;
+}
+
+.app-info {
+    font-weight: bold;
+    font-size: 1.5em;
+    color: #333;
+    padding: 10px;
+    border: 1px solid #333;
+    border-radius: 5px;
+    box-shadow: #333333 2px 2px 2px;
+}
+
+nav {
+    color: #B77F66;
+}
+
+
+:root{
+    --brown: #B77F66;
+    --light: #FAEDCA;
+    --green: #5B7553;
+    --orange: #F58B00;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
     background-color: var(--brown);
     padding: 16px 32px;
     overflow-x: hidden;
     min-height: 100vh;
 }
 
-body {
-    font-size: 16px;
-    font-family: 'Roboto', sans-serif;
-    background-color: var(--brown);
-    min-height: 100vh;
-}
-
 /* HEADER */
-.menu {
+
+
+
+.menu{
     background-color: var(--light);
     border-radius: 20px 20px 0 0;
 }
 
-.menu-container {
+.menu-container{
     display: flex;
-    justify-content: space-between; /* Répartit les éléments : logo, menu, connexion */
+    justify-content: space-between;
     align-items: center;
     margin: 0 auto;
     padding: 16px;
     max-width: 1200px; /* Largeur maximale */
 }
 
-.logo-header {
-    margin: 0; /* Supprime toute marge inutile */
+.logo-header{
+    z-index: 10;
+    margin-left: 30px;
 }
+
 
 .logo-header img{
     width: 200px;
@@ -66,57 +127,193 @@ body {
 
 .menu-header ul{
     display: flex;
-    justify-content: center; /* Centre les éléments horizontalement */
+    justify-content: center;
     align-items: center;
-    gap: 64px; /* Espace entre les éléments */
-    list-style: none;
-    margin: 0;
-    padding: 0;
+    gap: 64px;
 }
 
-.menu-header a {
+
+.container{
+    width: 1538px;
+    margin: 0 auto;
+}
+
+h1 {
+    font-size: 4rem;
+    line-height: 1.2;
+    text-transform: uppercase;
+    text-align: center; /* Centrer le texte */
+}
+
+p{
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+ul{
+    list-style: none;
+}
+
+a{
     text-decoration: none;
     color: var(--brown);
-    font-size: 1.2rem;
-    font-weight: bold;
     text-transform: capitalize;
 }
 
-.user-info {
-    display: flex;
-    align-items: center;
+.btn{
+    border-radius: 30px;
+    padding: 12px 24px;
+    font-weight: bold;
 }
 
-.user-info .btn-header {
-    margin-left: 10px;
-    border: 2px solid var(--brown);
-    border-radius: 30px;
-    padding: 8px 16px;
-    font-weight: bold;
+.btn-stroke-brown{
     color: var(--brown);
-    background-color: var(--light);
+    border: 2px solid var(--brown);
+}
+
+input{
+    border: none;
+    background: none;
+    font-size: 1.2rem;;
+}
+
+input:focus{
+    outline: none;
+}
+
+button{
+    border: none;
+    background: none;
+    padding: 0;
     cursor: pointer;
 }
 
-/* FOOTER */
-footer {
+footer{
     background-color: var(--light);
     padding: 16px 0;
     border-radius: 0 0 20px 20px;
-    text-align: center;
-    font-size: 0.9rem;
-    color: var(--brown);
+}
+.contact-content {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    padding: 20px;
 }
 
-/* MAIN */
-main {
-    min-height: 80vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.van-contact {
+    width: 35%;
+    position: relative;
+    z-index: 1;
+    margin-right: 550px;
+}
+
+.van-contact img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.contact-card {
+    width: 80%;
     background-color: var(--light);
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-left: 550px;
+    position: absolute;
+    top: 20%;
+    left: -10%;
+    z-index: 2;
+    transform: translateX(-10%);
+}
+
+.contact-card p {
+    color: var(--brown);
+    font-size: 1.5rem;
+}
+
+.contact-card form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contact-card form div {
+    margin-bottom: 15px;
+    margin-top: 40px;
+    width: 100%;
+    text-align: left;
+}
+
+
+.agency-info svg {
+    fill: var(--orange);
+    stroke: var(--orange);
+    stroke-width: 2px;
+    margin-right: 15px;
+    width: 27px;
+}
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.instagram-icon svg{
+    width: 40px;
+    height: 40px;
+    fill: var(--brown);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+.instagram-icon svg:hover{
+    fill: var(--orange);
+    transform: scale(1.2);
+}
+
+.facebook-icon svg {
+    width: 40px;
+    height: 40px;
+    fill: var(--brown);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.facebook-icon svg:hover {
+    fill: var(--orange);
+    transform: scale(1.2);
+}
+
+
+.x-icon svg {
+    width: 40px;
+    height: 40px;
+    fill: var(--brown);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.x-icon svg:hover {
+    fill: var(--orange);
+    transform: scale(1.2);
+}
+
+
+.youtube-icon svg {
+    width: 45px;
+    height: 45px;
+    fill: var(--brown);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.youtube-icon svg:hover {
+    fill: var(--orange);
+    transform: scale(1.2);
 }
 
 /* Scoped styles for the register page */
@@ -366,6 +563,47 @@ main {
     padding-right: 130px;
     padding-left: 263px;
 }
+.titre-users {
+    text-align: center;
+    margin-bottom: 30px;
+    position: relative;
+}.titre-users h1 {
+     font-size: 3rem;
+     color: var(--brown);
+     text-transform: uppercase;
+     letter-spacing: 3px;
+     background: none;
+     -webkit-background-clip: text;
+     -webkit-text-fill-color: var(--brown);
+     position: relative;
+     display: inline-block;
+     padding-bottom: 10px;
+ }
+
+.titre-users h1::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 5px;
+    background-color: var(--brown);
+    border-radius: 2px;
+}
+
+
+.user-list {
+    list-style: none;
+    padding: 0;
+    max-width: 1000px;
+    background: linear-gradient(135deg, #FAEDCA, var(--brown));
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    margin-bottom: 80px;
+}
 
 
 /* Styles for the 404 error page */
@@ -423,6 +661,357 @@ main {
     font-weight: bold;
 }
 
+.user-list:hover {
+    transform: scale(1.02);
+}
+
+
+.user-list li {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.user-list li:last-child {
+    border-bottom: none;
+}
+
+.user-list li:hover {
+    background: rgba(183, 127, 102, 0.8);
+    color: #FFF;
+}
+
+.form-voyage-edit{
+    color: black;
+}
+
+.voyage-text-area-edit {
+    background-color: #B77F663D;
+    border-radius: 2px;
+}
+
+/* Ensure the form container is centered and balanced */
+.form-voyage-edit {
+    display: grid;
+    grid-template-areas:
+        "image title"
+        "image description"
+        "image resume"
+        "continents public"
+        "continents button";
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    padding: 20px;
+    width: 900px;
+    margin: auto;
+}
+
+/* Ensure text areas have consistent width */
+.voyage-text-area-edit {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--brown);
+    border-radius: 5px;
+    background-color: #FAEDCA;
+    font-size: 1rem;
+    color: var(--brown);
+}
+
+/* Specific grid areas for text areas */
+#titre {
+    grid-area: title;
+}
+
+#description {
+    grid-area: description;
+}
+
+#resume {
+    grid-area: resume;
+}
+.user-list img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-right: 20px;
+    border: 3px solid var(--brown);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+.voyage-text-area-edit {
+    width: 100%;
+    min-height: 100px; /* Ajustez la hauteur selon vos besoins */
+    padding: 10px;
+    border: 1px solid #D3C1A5;
+    border-radius: 5px;
+    background-color: #FAECDA;
+    font-size: 1rem;
+    color: #B77F66;
+    resize: vertical; /* Permettre à l'utilisateur de redimensionner si besoin */
+}
+
+.voyage-text-area-edit::placeholder {
+    color: #B77F66; /* Placeholder dans le thème */
+    opacity: 0.7;
+}
+
+/* Section image principale */
+.image-placeholder {
+    grid-area: image;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px dashed var(--brown);
+    background-color: #FAEDCA;
+    width: 100%;
+    height: 200px;
+    border-radius: 10px;
+    font-size: 2rem;
+    color: var(--brown);
+    cursor: pointer;
+}
+
+/* Champs texte */
+label {
+    font-size: 1rem;
+    font-weight: bold;
+    color: var(--brown);
+    margin-bottom: 5px;
+    display: block;
+}
+
+#titre, #description, #resume {
+    grid-area: title;
+    grid-area: description;
+    grid-area: resume;
+}
+
+/* Section continents */
+.continents {
+    grid-area: continents;
+    display: flex;
+    gap: 10px;
+    justify-content: start;
+}
+
+.continent-checkbox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.continent-checkbox input {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+/* Case Public */
+.public-section {
+    grid-area: public;
+    display: flex;
+    align-items: center;
+}
+
+.public-section input {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+.submit-section {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.submit-section button {
+    padding: 10px 20px;
+    background-color: #8D5C43;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+
+button[type="submit"] {
+    background-color: var(--brown);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+}
+
+button[type="submit"]:hover {
+    background-color: var(--orange);
+}
+
+.form-group {
+    margin-bottom: 20px; /* Ajoute de l'espace entre les sections */
+}
+
+label {
+    display: block; /* Force l'affichage du label sur une ligne séparée */
+    margin-bottom: 5px; /* Espacement entre le label et le champ */
+    font-weight: bold; /* Optionnel : met en valeur le label */
+}
+
+textarea.voyage-text-area-edit,
+input.voyage-text-area-edit {
+    width: 100%; /* Champ qui s'étend sur toute la largeur */
+    min-height: 100px; /* Assurez une hauteur confortable pour les zones de texte */
+    padding: 10px;
+    border: 1px solid #D3C1A5;
+    border-radius: 5px;
+    background-color: #FAECDA;
+    font-size: 1rem;
+    color: #B77F66;
+    resize: vertical; /* Permet à l'utilisateur de redimensionner */
+}
+
+.titre-modif-voyage > h1 {
+    color: var(--brown);
+}
+
+.user-list li:hover img {
+    transform: scale(1.2);
+    border-color: #FFF;
+}
+
+/* User name */
+.user-list li span {
+    flex-grow: 1;
+    font-size: 1.4rem;
+    color: var(--brown);
+    font-weight: bold;
+    transition: color 0.3s ease;
+    margin-right: 50px;
+}
+
+.user-list li:hover span {
+    color: #FFF;
+}
+
+/* View button */
+.user-list .btn {
+    padding: 12px 25px;
+    border-radius: 25px;
+    background-color: var(--brown);
+    color: #FFF;
+    cursor: pointer;
+    font-weight: bold;
+    border: 3px solid var(--brown);
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.user-list .btn:hover {
+    background-color: #FFF;
+    color: var(--brown);
+    transform: scale(1.1);
+    border-color: #FFF;
+}
 .error-message .illustration {
     margin-top: 20px;
+}
+.titre-modif-etape {
+    text-align: center;
+    margin-bottom: 30px;
+    position: relative;
+}
+.titre-modif-etape h1 {
+    font-size: 3rem;
+    color: var(--brown);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    background: none;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: var(--brown);
+    position: relative;
+    display: inline-block;
+    padding-bottom: 10px;
+}
+.titre-modif-etape h1::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 5px;
+    background-color: var(--brown);
+    border-radius: 2px;
+}
+.titre-modif-etape > h1 {
+    color: var(--brown);
+    font-size: 1.5rem;
+}
+.form-etape-edit {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    gap: 20px;
+    width: 600px;
+    margin: auto;
+}
+
+.form-etape-edit .form-group {
+    margin-bottom: 20px;
+}
+
+.form-etape-edit label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-size: 1rem;
+    color: #5A3921; /* Couleur uniforme pour tous les labels */
+}
+
+.form-etape-edit input[type="text"],
+.form-etape-edit textarea,
+.form-etape-edit input[type="url"],
+.form-etape-edit input[type="date"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #D3C1A5;
+    border-radius: 5px;
+    background-color: #FAECDA;
+    font-size: 1rem;
+    color: #B77F66;
+    box-sizing: border-box;
+    height: 40px; /* Hauteur uniforme pour tous les champs */
+}
+
+.form-etape-edit textarea {
+    resize: none; /* Désactive la redimension verticale pour conserver l'uniformité */
+}
+
+.form-etape-edit .submit-section {
+    grid-column: 1 / span 2; /* Occupe deux colonnes /
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px; / Ajoute un espacement avec les champs */
+}
+
+.form-etape-edit button[type="submit"] {
+    background-color: var(--brown);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.form-etape-edit button[type="submit"]:hover {
+    background-color: var(--orange);
 }

@@ -1,3 +1,4 @@
+<!-- resources/views/components/nav-bar.blade.php -->
 <div class="menu-container">
     <div class="logo-header">
         <img src="{{ Vite::asset('resources/images/Logo-maraton.svg')}}" alt="Logo">
@@ -9,6 +10,7 @@
             <li class="menu-item"><a href="{{ Auth::check() ? route('users.show', Auth::user()->id) : route('users.index') }}" class="link menu-link">profil</a></li>
             <li class="menu-item"><a href="{{route('equipes')}}" class="link menu-link">à propos</a></li>
             <li class="menu-item"><a href="{{route('contact')}}" class="link menu-link">contact</a></li>
+            <li class="menu-item"><a href="{{route('voyage.create')}}" class="link menu-link">Créer un voyage</a></li>
         </ul>
     </nav>
     @auth
@@ -24,9 +26,6 @@
         <div class="btn-header">
             @if(Route::currentRouteName() != 'login')
                 <a href="{{route("login")}}" class="btn btn-stroke-brown">Connexion</a>
-            @endif
-            @if(Route::currentRouteName() != 'register')
-                <a href="{{route("register")}}" class="btn btn-stroke-brown">Inscription</a>
             @endif
         </div>
     @endauth
