@@ -1,10 +1,11 @@
 <x-app>
     <h1>Liste des voyages</h1>
     <a href="{{ route('voyage.create') }}">Créer un voyage</a>
+    <x-voyage-car-no-user :voyages="$voyages" />
     @foreach($voyages as $voyage)
         @if($voyage->en_ligne==1)
             <h2>{{ $voyage->titre }}</h2>
-            <p>{{ $voyage->description }}</p>
+             <p>{{ $voyage->description }}</p>
             <p>{{ $voyage->resume }}</p>
             <p>{{ $voyage->continent }}</p>
             <p>{{ $voyage->user_id }}</p>
