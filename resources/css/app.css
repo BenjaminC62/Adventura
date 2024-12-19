@@ -1081,13 +1081,12 @@ input.voyage-text-area-edit {
 .voyage-detail .avis p {
     color: #5A3921;
 }
-/* Horizontal Timeline styles with central bar and alternating steps */
 .timeline {
     display: flex;
-    overflow-x: auto;
+    overflow-x: auto; /* Permet le défilement horizontal */
     padding: 20px 0;
     position: relative;
-    white-space: nowrap;
+    white-space: nowrap; /* Garde tous les éléments sur une seule ligne */
 }
 
 .timeline::before {
@@ -1097,9 +1096,11 @@ input.voyage-text-area-edit {
     background-color: #D3C1A5;
     top: 50%;
     left: 0;
-    right: 0;
     transform: translateY(-50%);
     z-index: 1;
+    width: calc(100% + 3100px); /* Étend la barre centrale au-delà des bords visibles */
+    min-width: 100vw; /* La barre couvre toute la largeur visible */
+    pointer-events: none;
 }
 
 .timeline-item {
