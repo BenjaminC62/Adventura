@@ -18,9 +18,9 @@
                     <div class="swiper-slide">
                         <li>
                             @if ($voyage->visuel && file_exists(public_path('storage/' . $voyage->visuel)))
-                                <img src="{{ asset('storage/' . $voyage->visuel) }}" alt="Visuel"/>
+                                <a href="{{ route('voyage.show', $voyage->id) }}" style="width: 100%; height: 100%; object-fit: cover"><img src="{{ asset('storage/' . $voyage->visuel) }}" alt="Visuel"/></a>
                             @else
-                                <img src="{{$voyage->visuel}}" alt="image_create" />
+                                <a href="{{ route('voyage.show', $voyage->id) }}" style="width: 100%; height: 100%; object-fit: cover"><img src="{{$voyage->visuel}}" alt="Visuel"/></a>
                             @endif
                             <div style="display: flex; justify-content: center; align-items: center">
                                 <svg width="24" fill="var(--orange)" stroke="var(--orange)" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd">
