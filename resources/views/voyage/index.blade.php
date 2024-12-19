@@ -20,8 +20,17 @@
                 @method('DELETE')
                 <button type="submit">Supprimer</button>
             </form>
+            <form action="{{ route('voyage.like', $voyage->id) }}" method="POST">
+                @csrf
+                <button type="submit">
+                    @if($voyage->likes()->where('user_id', auth()->id())->exists())
+                        Unlike
+                    @else
+                        Like
+                    @endif
+                </button>
+            </form>
+            <p>{{ $voyage->likes()->count() }} likes</p>
         @endif
     @endforeach
 </x-app>
-
-

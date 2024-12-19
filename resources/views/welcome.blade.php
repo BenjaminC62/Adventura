@@ -1,24 +1,9 @@
 <x-app>
-
-
-
-<!-- Section Principale -->
-<main>
-    <!-- Image -->
-    <div class="hero">
-        <img src="marathon.png" alt="Paysage de voyage">
-
-        <!-- Carte "GUIDE DE VOYAGE" -->
-        <div class="card">
-            <h2>GUIDE DE VOYAGE</h2>
+    <div class="accueil">
+        <img src="{{ asset('storage/images/accueil-carre.png') }}" alt="accueil" class="photo-accueil">
+        <div class="welcome-guide">
+            <h1>GUIDE DE VOYAGE</h1>
             <p>Texte explicatif</p>
         </div>
-
-        <!-- Barre de Recherche -->
-        <div class="search-container">
-            <input type="text" placeholder="Recherche une destination">
-            <button>🔍</button>
-        </div>
     </div>
-</main>
 </x-app>
