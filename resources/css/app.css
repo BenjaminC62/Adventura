@@ -900,7 +900,7 @@ input.voyage-text-area-edit {
     color: #FFF;
 }
 
-/* View button */
+
 .user-list .btn {
     padding: 12px 25px;
     border-radius: 25px;
@@ -970,7 +970,7 @@ input.voyage-text-area-edit {
     margin-bottom: 5px;
     font-weight: bold;
     font-size: 1rem;
-    color: #5A3921; /* Couleur uniforme pour tous les labels */
+    color: #5A3921;
 }
 
 .form-etape-edit input[type="text"],
@@ -985,19 +985,19 @@ input.voyage-text-area-edit {
     font-size: 1rem;
     color: #B77F66;
     box-sizing: border-box;
-    height: 40px; /* Hauteur uniforme pour tous les champs */
+    height: 40px;
 }
 
 .form-etape-edit textarea {
-    resize: none; /* Désactive la redimension verticale pour conserver l'uniformité */
+    resize: none;
 }
 
 .form-etape-edit .submit-section {
-    grid-column: 1 / span 2; /* Occupe deux colonnes /
+    grid-column: 1 / span 2;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 20px; / Ajoute un espacement avec les champs */
+    margin-top: 20px;
 }
 
 .form-etape-edit button[type="submit"] {
@@ -1013,4 +1013,173 @@ input.voyage-text-area-edit {
 
 .form-etape-edit button[type="submit"]:hover {
     background-color: var(--orange);
+}
+
+/* Voyage detail styles */
+.voyage-detail {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #D3C1A5;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.voyage-detail img {
+    display: block;
+    margin: 20px auto;
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.voyage-detail .actions {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.voyage-detail .actions a,
+.voyage-detail .actions button {
+    background-color: #8D5C43;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+}
+
+.voyage-detail .actions a:hover,
+.voyage-detail .actions button:hover {
+    background-color: #B77F66;
+}
+
+.voyage-detail .etape {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #FAECDA;
+    border: 1px solid #D3C1A5;
+    border-radius: 5px;
+}
+
+.voyage-detail .etape h3 {
+    color: #5A3921;
+}
+
+.voyage-detail .avis {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #FAECDA;
+    border: 1px solid #D3C1A5;
+    border-radius: 5px;
+}
+
+.voyage-detail .avis p {
+    color: #5A3921;
+}
+/* Horizontal Timeline styles with central bar and alternating steps */
+.timeline {
+    display: flex;
+    overflow-x: auto;
+    padding: 20px 0;
+    position: relative;
+    white-space: nowrap;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    height: 6px;
+    background-color: #D3C1A5;
+    top: 50%;
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
+    z-index: 1;
+}
+
+.timeline-item {
+    display: inline-block;
+    position: relative;
+    width: 700px;
+    margin-right: 20px;
+    vertical-align: top;
+}
+
+.timeline-item::after {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background-color: white;
+    border: 4px solid #D3C1A5;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    z-index: 2;
+}
+
+.timeline-item:nth-child(odd) .timeline-content {
+    margin-top: 0px;
+}
+
+.timeline-item:nth-child(even) .timeline-content {
+    margin-top: 230px;
+}
+
+.timeline-date {
+    color: #5A3921;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.timeline-content {
+    padding: 20px;
+    background-color: #FAECDA;
+    position: relative;
+    border-radius: 6px;
+    border: 1px solid #D3C1A5;
+}
+
+.timeline-content h3 {
+    margin-top: 0;
+    color: #5A3921;
+}
+
+.timeline-content p {
+    margin: 10px 0;
+    color: #5A3921;
+}
+
+.timeline-content a {
+    color: #8D5C43;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.timeline-content a:hover {
+    color: #B77F66;
+}
+
+.btn-voyage {
+    background-color: #8D5C43;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+}
+
+.btn-voyage:hover {
+    background-color: #B77F66;
 }
