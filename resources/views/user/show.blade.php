@@ -48,7 +48,7 @@
     <h2 class="profile-commentaires">Commentaires</h2>
     <ul>
         @foreach($user->avis as $comment)
-            <li>{{ $comment->content }} ({{ $comment->created_at }})</li>
+            <li>{{ $comment->contenu }} -  ({{ $comment->created_at }})</li>
         @endforeach
     </ul>
 

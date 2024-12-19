@@ -29,7 +29,7 @@
     <div class="footer-left">
         <h5>Nous retrouver :</h5>
         <div class="socials">
-            <ul>       
+            <ul>
                 <li class="social-item"><a href="#">
                     <div class="instagram-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 50 50" style="fill:var(--light);">
@@ -64,8 +64,8 @@
     <div class="footer-right">
         <h5>Contact</h5>
         <div class="ifooter-info">
-            <p class="footer-info-elt">Adresse : Lorem ispum is simply dummy text of the printing, 14</p>
-            <p class="footer-info-elt">Mail : Lorem Ipsum@gmail.com</p>
+            <p class="footer-info-elt">Adresse : 123 Rue de l'Imagination, 75000 Paris</p>
+            <p class="footer-info-elt">Mail : avantura@gmail.com</p>
             <p class="footer-info-elt">Tél : 06 43 56 72 89</p>
         </div>
     </div>

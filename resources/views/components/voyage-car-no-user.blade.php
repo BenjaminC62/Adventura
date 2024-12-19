@@ -52,7 +52,7 @@
                 </div>
             @endforeach
         </div>
-        <div class="swiper-pagination" style="bottom: 220px !important;"></div>
+        <div class="swiper-pagination" style="bottom: 205px !important;"></div>
         <div class="swiper-button-prev" style="bottom: 430px !important; left: 78px !important;"></div>
         <div class="swiper-button-next" style="bottom: 430px !important; right: 78px !important;"></div>
     </div>

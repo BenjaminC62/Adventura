@@ -762,8 +762,6 @@ button{
     color: #FFF;
 }
 
-.form-voyage-edit{
-}
 
 .voyage-text-area-edit {
     background-color: #B77F663D;
@@ -779,6 +777,7 @@ button{
     padding: 20px;
     width: 100%;
     margin: auto;
+    flex-direction: column;
 }
 
 main>div{
@@ -941,10 +940,8 @@ label {
 
 .public-section input {
     position: absolute;
-  opacity: 0;
   cursor: pointer;
-  height: 0;
-  width: 0;
+    left: 153px;
 }
 
 .checkbox-container{
