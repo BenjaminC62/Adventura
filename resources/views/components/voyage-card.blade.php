@@ -31,9 +31,9 @@
                 </div>
             @endforeach
         </div>
-        <div class="swiper-pagination"></div>
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
+        <div class="swiper-pagination" style="bottom: 317px !important;"></div>
+        <div class="swiper-button-prev" style="bottom: 496px !important; left: 88px !important;"></div>
+        <div class="swiper-button-next" style="bottom: 496px !important; right: 88px !important;"></div>
     </div>
 </div>
 
