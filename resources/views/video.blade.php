@@ -1,7 +1,7 @@
 <!-- resources/views/video.blade.php -->
 <x-app>
     <div class="centered-container">
-        <h2 class="green-title">Décrouvrez le projet et l'équipe AVANTURA</h2>
+        <h2 class="green-title">Découvrez le projet et l'équipe AVANTURA</h2>
         <div class="full-width">
             <video controls>
                 <source src="path/to/your/video.mp4" type="video/mp4">
