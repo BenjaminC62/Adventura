@@ -431,6 +431,64 @@ footer{
     box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.5);
     top: 250px;
     border-radius: 20px;
+}
 
 
+/* Styles for the 404 error page */
+.error-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    position: relative;
+}
+
+.error-page::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.error-message {
+    position: relative;
+    z-index: 2;
+    background-color: rgba(250, 236, 218, 0.9);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    border: 2px solid #B77F66;
+}
+
+.error-message h1 {
+    font-size: 3rem;
+    color: #8D5C43;
+    margin-bottom: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.error-message p {
+    font-size: 1.5rem;
+    color: #4F4F4F;
+    margin-bottom: 20px;
+}
+
+.error-message .btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    background-color: #FF8C00;
+    color: #FFF;
+    font-size: 1rem;
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.error-message .illustration {
+    margin-top: 20px;
 }
