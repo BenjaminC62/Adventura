@@ -1,20 +1,23 @@
 <!-- resources/views/components/nav-bar.blade.php -->
 <div class="menu-container">
     <div class="logo-header">
-        <img src="{{ Vite::asset('resources/images/Logo-maraton.svg')}}" alt="Logo">
+        <a href="{{route('accueil')}}">
+            <img src="{{ Vite::asset('resources/images/Logo-maraton.svg')}}" alt="Logo">
+        </a>
     </div>
     <nav class="menu-header">
         <ul>
-            <li class="menu-item"><a href="{{route('accueil')}}" class="link menu-link">accueil</a></li>
             <li class="menu-item"><a href="{{route('voyage.index')}}" class="link menu-link">destinations</a></li>
-            <li class="menu-item"><a href="{{ Auth::check() ? route('users.show', Auth::user()->id) : route('users.index') }}" class="link menu-link">profil</a></li>
+            <li class="menu-item"><a href="{{ route('users.index') }}" class="link menu-link">profil</a></li>
             <li class="menu-item"><a href="{{route('equipes')}}" class="link menu-link">à propos</a></li>
             <li class="menu-item"><a href="{{route('contact')}}" class="link menu-link">contact</a></li>
             <li class="menu-item"><a href="{{route('voyage.create')}}" class="link menu-link">Créer un voyage</a></li>
         </ul>
     </nav>
     @auth
-        {{Auth::user()->name}}
+        <a href="{{route('users.show', ['user' => Auth::user()])}}">
+            {{Auth::user()->name}}
+        </a>
         <div class="btn-header">
             <a class="btn btn-stroke-brown" href="{{route("logout")}}"
                onclick="document.getElementById('logout').submit(); return false;">Logout</a>
