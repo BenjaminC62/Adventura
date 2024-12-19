@@ -48,7 +48,7 @@ Route::get('/equipes', function () {
     $teamMembers = [
         'PEUVREL Noah - Taches effectuées : Création du logo',
         'DALMASSO Mathéo - Taches effectuées : Création du CRUD de la page d\'accueil',
-        'LEPERS Sharleen - Taches effectuées : Créatiion du scénario de la vidéo en anglais',
+        'LEPERS Sharleen - Taches effectuées : Création du scénario de la vidéo en anglais',
         'CORNET Benjamin - Taches effectuées : Création du CRUD pour les commentaires',
         'DELTOUR Léa - Taches effectuées : Itinéraire du voyage',
         'LESTRIEZ Jade - Taches effectuées : Maquette figma',

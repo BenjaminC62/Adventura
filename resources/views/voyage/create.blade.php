@@ -38,25 +38,31 @@
         <div class="continents">
             <label class="continent-radio">
                 <input type="radio" name="continent" id="continent_afrique" value="Afrique">
-                Afrique
+                 
             </label>
+            <img id='afrique' src="{{ Vite::asset('resources/images/afrique.png')}}" alt="Afrique">
+               
+
             <label class="continent-radio">
                 <input type="radio" name="continent" id="continent_asie" value="Asie">
-                Asie
-            </label>
+           </label>
+           <img id="asie" src="{{ Vite::asset('resources/images/asie.png')}}" alt="Asie">
+             
             <label class="continent-radio">
                 <input type="radio" name="continent" id="continent_europe" value="Europe">
-                Europe
             </label>
+            <img id="europe" src="{{ Vite::asset('resources/images/europe.png')}}" alt="Europe">
+   
             <label class="continent-radio">
                 <input type="radio" name="continent" id="continent_amerique" value="Amérique">
-                Amérique
             </label>
+            <img id="amerique" src="{{ Vite::asset('resources/images/amerique.png')}}" alt="Amérique">
+   
             <label class="continent-radio">
                 <input type="radio" name="continent" id="continent_oceanie" value="Océanie">
-                Océanie
             </label>
-        </div>
+            <img id="oceanie" src="{{ Vite::asset('resources/images/oceanie.png')}}" alt="Océanie">
+            </div>
 
         <!-- Public -->
         <div class="public-section">
@@ -69,4 +75,31 @@
             <button type="submit">Créer le voyage</button>
         </div>
     </form>
+
+    <script>
+        
+        let continents = ["asie", "oceanie", "afrique", "amerique", "europe"]
+        for(let continent of continents) {
+           
+            document.getElementById(continent).addEventListener("click", function()  {
+                let sz = this.src.lastIndexOf("/") +1
+                console.log(this.src.substring(0,sz))
+                if(this.src.includes("orange")) {
+                this.src=this.src.substring(0, sz) + continent + ".png"
+                } else {
+                    
+                    for(let c of continents) {
+                        let tmp = document.getElementById(c)
+                        tmp.src = tmp.src.substring(0, sz) + c + ".png"
+                    }    
+                    this.src=this.src.substring(0, sz) + continent+ "-orange.png"
+
+                }
+           let radio = document.getElementById("continent_"+continent)
+           radio.checked = 1 - radio.checked
+            
+
+        })
+    }
+        </script>
 </x-app>

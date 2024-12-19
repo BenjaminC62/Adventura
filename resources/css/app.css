@@ -794,6 +794,15 @@ label {
     display: flex;
     gap: 10px;
     justify-content: start;
+    width: 90px;
+    heigth: 40%;
+    padding: 2px;
+    margin-bottom: 24px;
+}
+
+
+.continent-radio {
+    display: none;
 }
 
 .continent-checkbox {
@@ -801,6 +810,7 @@ label {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
 }
 
 .continent-checkbox input {
