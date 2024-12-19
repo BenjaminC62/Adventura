@@ -58,5 +58,8 @@ Route::get('/equipes', function () {
     return view('equipes', compact('teamMembers'));
 })->name('equipes');
 
+Route::get('/video', function () {
+    return view('video');
+})->name('video');
 
 Route::post('voyage/{voyage}/like', [VoyageController::class, 'like'])->name('voyage.like');

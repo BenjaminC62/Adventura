@@ -1246,7 +1246,48 @@ input.voyage-text-area-edit {
     border-radius: 5px;
     box-sizing: border-box;
 }
+/* resources/css/video.css */
+.full-width {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: var(--light);
+}
 
+.green-title {
+    color: var(--green);
+    font-size: 3rem; /* Titre principal */
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.full-width {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.full-width video {
+    width: 100%;
+    max-height: 500px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.lorem-text {
+    font-size: 1.2rem;
+    color: #5A3921;
+    line-height: 1.8;
+    text-align: justify;
+    margin-top: 20px;
+    padding: 0 150px;
+}
 
 .message {
     font-size: 1.2rem;
