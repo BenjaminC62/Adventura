@@ -1,7 +1,7 @@
 <!-- resources/views/components/nav-bar.blade.php -->
 <div class="menu-container">
     <div class="logo-header">
-        <img src="{{ asset('images/Logo-maraton.svg') }}" alt="Logo">
+        <img src="{{ Vite::asset('resources/images/Logo-maraton.svg')}}" alt="Logo">
     </div>
     <nav class="menu-header">
         <ul>
