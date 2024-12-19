@@ -198,6 +198,7 @@ h1 {
     line-height: 1.2;
     text-transform: uppercase;
     text-align: center; /* Centrer le texte */
+    color: var(--green);
 }
 
 h2{
@@ -628,6 +629,7 @@ button{
     padding: 0 32px;
     right: 0;
     width: 800px;
+    height: 320px;
 }
 
 .welcome-guide h1{

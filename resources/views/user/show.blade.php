@@ -41,7 +41,7 @@
     <h2 class="profile-like">Voyages aimés</h2>
     <ul>
         @foreach($user->likes as $likedTrip)
-            <li>{{ $likedTrip->title }} ({{ $likedTrip->date }})</li>
+            <li>{{ $likedTrip->titre }}</li>
         @endforeach
     </ul>
 
