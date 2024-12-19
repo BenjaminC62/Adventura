@@ -13,7 +13,9 @@
         @endif
         <br>
         <div class="actions">
+            @can('update', $voyage)
             <a href="{{ route('etape.create', ['voyage_id' => $voyage->id]) }}">Créer une étape</a>
+            @endcan
             <a href="{{ route('voyage.index') }}">Retour</a>
         </div>
 
@@ -35,18 +37,26 @@
             <p>Aucune étape pour ce voyage</p>
         @endif
 
+        @auth
         <h2>Avis</h2>
         @foreach($voyage->avis as $avis)
             <div class="avis">
                 <p>{{ $avis->contenu }}</p>
+                @can('update', $avis)
                 <a href="{{ route('avis.edit', $avis->id) }}" class="btn-voyage">Modifier</a>
+                @endcan
+
+                @can('delete', $avis)
                 <form action="{{ route('avis.destroy', ['voyage' => $voyage->id, 'avis' => $avis->id]) }}" method="POST" style="margin-top: 10px;">
                     @csrf
                     @method('DELETE')
                     <button type="submit" class="btn-voyage">Supprimer</button>
                 </form>
+                @endcan
             </div>
         @endforeach
+
         <a href="{{ route('avis.create', ['voyage' => $voyage->id, 'user' => $user->id]) }}" class="btn-voyage">Ajouter un avis</a>
+        @endauth
     </div>
 </x-app>

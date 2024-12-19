@@ -26,9 +26,6 @@ class VoyageController extends Controller
      */
     public function create()
     {
-        if(!$this->authorize('create', Voyage::class)) {
-            return redirect()->route('voyage.index');
-        }
         return view('voyage.create');
     }
 
@@ -80,10 +77,9 @@ class VoyageController extends Controller
      */
     public function edit(string $id)
     {
-        if(!$this->authorize('update', Voyage::class)) {
-            return redirect()->route('voyage.index');
-        }
         $voyage = Voyage::findOrFail($id);
+        $this->authorize('update', $voyage);
+
         return view('voyage.edit', ['voyage' => $voyage]);
     }
 
@@ -123,11 +119,11 @@ class VoyageController extends Controller
      */
     public function destroy(string $id)
     {
-        if(!$this->authorize('delete', Voyage::class)) {
-            return redirect()->route('voyage.index');
-        }
         $voyage = Voyage::findOrFail($id);
+        $this->authorize('delete', $voyage);
+
         $voyage->delete();
+
         return redirect()->route('voyage.index');
     }
 

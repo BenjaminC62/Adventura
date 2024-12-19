@@ -11,7 +11,9 @@
             <li class="menu-item"><a href="{{ route('users.index') }}" class="link menu-link">profil</a></li>
             <li class="menu-item"><a href="{{route('equipes')}}" class="link menu-link">à propos</a></li>
             <li class="menu-item"><a href="{{route('contact')}}" class="link menu-link">contact</a></li>
+            @auth
             <li class="menu-item"><a href="{{route('voyage.create')}}" class="link menu-link">Créer un voyage</a></li>
+            @endauth
         </ul>
     </nav>
     @auth

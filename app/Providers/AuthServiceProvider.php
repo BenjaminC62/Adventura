@@ -3,7 +3,8 @@
 namespace App\Providers;
 
 use App\Models\User;
-use App\Policies\UserPolicy;
+use App\Models\Voyage;
+use App\Policies\VoyagePolicy;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 
 class AuthServiceProvider extends ServiceProvider {
@@ -13,7 +14,8 @@ class AuthServiceProvider extends ServiceProvider {
      * @var array<class-string, class-string>
      */
     protected $policies = [
-        User::class => UserPolicy::class,
+        Voyage::class => VoyagePolicy::class,
+        Etape::class => EtapePolicy::class,
     ];
 
     /**
