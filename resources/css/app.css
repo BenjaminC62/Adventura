@@ -691,7 +691,7 @@ footer{
     border-radius: 2px;
 }
 
-/* Styles spécifiques au formulaire de voyage */
+/* Ensure the form container is centered and balanced */
 .form-voyage-edit {
     display: grid;
     grid-template-areas:
@@ -700,21 +700,35 @@ footer{
         "image resume"
         "continents public"
         "continents button";
-    grid-template-columns: 1.5fr 1fr;
+    grid-template-columns: 1fr 1fr;
     gap: 20px;
     padding: 20px;
     width: 900px;
     margin: auto;
 }
 
+/* Ensure text areas have consistent width */
 .voyage-text-area-edit {
     width: 100%;
     padding: 10px;
     border: 1px solid var(--brown);
     border-radius: 5px;
-    background-color: #FAEDCA; /* Couleur claire */
+    background-color: #FAEDCA;
     font-size: 1rem;
     color: var(--brown);
+}
+
+/* Specific grid areas for text areas */
+#titre {
+    grid-area: title;
+}
+
+#description {
+    grid-area: description;
+}
+
+#resume {
+    grid-area: resume;
 }
 .user-list img {
     width: 60px;
@@ -806,12 +820,23 @@ label {
     margin-right: 10px;
 }
 
-/* Bouton d'envoi */
 .submit-section {
-    grid-area: button;
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
+    width: 100%;
 }
+
+.submit-section button {
+    padding: 10px 20px;
+    background-color: #8D5C43;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
 
 button[type="submit"] {
     background-color: var(--brown);
@@ -822,6 +847,7 @@ button[type="submit"] {
     border: none;
     cursor: pointer;
     transition: background-color 0.3s ease;
+
 }
 
 button[type="submit"]:hover {
@@ -896,3 +922,78 @@ input.voyage-text-area-edit {
     margin-top: 20px;
 }
 
+.form-etape-edit {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.etape-text-area-edit {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.submit-section {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.submit-section button {
+    padding: 10px 20px;
+    background-color: #8D5C43;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+
+
+.submit-section button:hover {
+    background-color: #6B422F;
+}
+
+.titre-modif-etape {
+    text-align: center;
+    margin-bottom: 30px;
+    position: relative;
+}
+.titre-modif-etape h1 {
+    font-size: 3rem;
+    color: var(--brown);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    background: none;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: var(--brown);
+    position: relative;
+    display: inline-block;
+    padding-bottom: 10px;
+}
+.titre-modif-etape h1::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 5px;
+    background-color: var(--brown);
+    border-radius: 2px;
+}
+.titre-modif-etape > h1 {
+    color: var(--brown);
+    font-size: 1.5rem;
+}
