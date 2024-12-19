@@ -40,9 +40,9 @@
             <input class="voyage-text-area-edit" type="datetime-local" name="fin" id="fin" required>
         </div>
         <!-- Bouton d'envoi -->
+        <div class="submit-section">
+            <button type="submit">Ajouter l'étape</button>
+        </div>
     </form>
-    <div class="submit-section">
-        <button type="submit">Ajouter l'étape</button>
-    </div>
-    <br>
+
 </x-app>
