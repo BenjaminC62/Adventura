@@ -1,7 +1,5 @@
 <x-app>
-
     <div class="profile-user-container">
-
         <img class="profile-user-banner" src="{{ Vite::asset('resources/images/user-banner.jpg') }}" alt="banner">
 
         <div class="profile-user-info">
@@ -11,17 +9,26 @@
     </div>
 
     <div class="profile-voyages-users">
-        <ul class="profile-voyage">
-            @foreach($voyages as $voyage)
-                <li>
-                    <img src="{{ $voyage->visuel }}" alt="Visuel de {{ $voyage->titre }}">
-                    <span>{{ $voyage->titre }}</span>
-                </li>
-            @endforeach
-        </ul>
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                @foreach($voyages as $voyage)
+                    <div class="swiper-slide">
+                        <li>
+                            @if ($voyage->visuel && file_exists(public_path('storage/' . $voyage->visuel)))
+                                <img src="{{ asset('storage/' . $voyage->visuel) }}" alt="Visuel">
+                            @else
+                                <img src="{{$voyage->visuel}}" alt="image_create">
+                            @endif
+                            <span>{{ $voyage->titre }}</span>
+                        </li>
+                    </div>
+                @endforeach
+            </div>
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+        </div>
     </div>
-
-
 
     <h2 class="profile-like">Voyages aimés</h2>
     <ul>
@@ -44,4 +51,47 @@
         @method('DELETE')
         <button type="submit" class="btn btn-danger">Supprimer</button>
     </form>
+    <script>
+        const swiper = new Swiper('.swiper-container', {
+            slidesPerView: 3,
+            spaceBetween: 30,
+            loop: true,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+    </script>
+
+    <style>
+
+        .swiper-container .swiper-pagination {
+            position: absolute;
+            bottom: -85px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+        }
+
+        .swiper-button-prev,
+        .swiper-button-next {
+            position: absolute;
+            top: auto;
+            bottom: 102px;
+            z-index: 10;
+        }
+
+        .swiper-button-prev {
+            left: 59px;
+        }
+
+
+        .swiper-button-next {
+            right: 59px;
+        }
+    </style>
 </x-app>
