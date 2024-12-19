@@ -550,6 +550,7 @@ footer{
     z-index: 1;
     position: relative;
     margin-right: 525px;
+    border-radius: 5px;
 }
 
 .welcome-guide{
