@@ -1034,8 +1034,8 @@ input.voyage-text-area-edit {
     padding: 20px;
     background-color: var(--light);
     border: 1px solid var(--brown);
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .voyage-detail img {
@@ -1048,27 +1048,19 @@ input.voyage-text-area-edit {
 
 .voyage-detail .actions {
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     gap: 10px;
     margin-top: 20px;
 }
 
-.voyage-detail .actions a,
-.voyage-detail .actions button {
-    background-color: #8D5C43;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    text-decoration: none;
+.voyage-detail .bottom-actions {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
 }
 
-.voyage-detail .actions a:hover,
-.voyage-detail .actions button:hover {
-    background-color: #B77F66;
-}
+
+
 
 .voyage-detail .etape {
     margin-top: 20px;
@@ -1093,12 +1085,50 @@ input.voyage-text-area-edit {
 .voyage-detail .avis p {
     color: #5A3921;
 }
+
+/* resources/css/app.css */
+.voyage-header {
+    display: flex;
+    align-items: flex-start;
+}
+
+.voyage-header img {
+    max-width: 450px;
+    margin-right: 20px;
+}
+
+.voyage-header .voyage-text {
+    flex: 1;
+}
+.voyage-header .actions {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    gap: 10px;
+}
+
+.voyage-text h1 {
+    font-size: 2.5rem;
+    color: #8D5C43;
+    margin-bottom: 20px;
+    text-align: center;
+
+}
+.voyage-text h2 {
+    font-size: 1.7rem;
+    color: #8D5C43;
+    margin-bottom: 20px;
+    text-align: left;
+    margin-left: 50px;
+}
+
 .timeline {
     display: flex;
-    overflow-x: auto; /* Permet le défilement horizontal */
+    overflow-x: auto;
     padding: 20px 0;
     position: relative;
-    white-space: nowrap; /* Garde tous les éléments sur une seule ligne */
+    white-space: nowrap;
 }
 
 .timeline::before {
@@ -1110,8 +1140,8 @@ input.voyage-text-area-edit {
     left: 0;
     transform: translateY(-50%);
     z-index: 1;
-    width: calc(100% + 3100px); /* Étend la barre centrale au-delà des bords visibles */
-    min-width: 100vw; /* La barre couvre toute la largeur visible */
+    width: calc(100% + 3100px);
+    min-width: 100vw;
     pointer-events: none;
 }
 
@@ -1205,13 +1235,73 @@ input.voyage-text-area-edit {
     text-decoration: none;
     display: inline-block;
     text-align: center;
+    margin-right: 10px;
+    width: 150px;
+    height: 50px;
+    line-height: 30px;
 }
+
 
 .btn-voyage:hover {
     background-color: #B77F66;
+    color: white;
+    text-decoration: none;
+}
+.btn-avis {
+    background-color: #8D5C43;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    margin-right: 10px;
+    width: 200px;
+    height: 50px;
+    line-height: 30px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    text-transform: none;
 }
 
-/* resources/css/app.css */
+.btn-avis:hover {
+    background-color: #B77F66;
+    color: white;
+    text-decoration: none;
+}
+.avis {
+    position: relative;
+    padding: 10px;
+    border: 1px solid #D3C1A5;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.avis .actions {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    gap: 10px;
+}
+.avis .actions svg {
+    background: none;
+    transition: transform 0.3s ease;
+}
+
+.avis .actions svg:hover {
+    transform: scale(1.2);
+}
+.avis .user-name {
+    font-size: 1.5em;
+    color: #8D5C43; /* Brown color */
+}
+
+
 .form-container {
     margin: 40px auto;
     padding: 30px;
