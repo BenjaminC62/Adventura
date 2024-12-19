@@ -1,4 +1,5 @@
 <x-app>
+    <div class="show-user-container">
     <div class="profile-user-container">
         <img class="profile-user-banner" src="{{ Vite::asset('resources/images/user-banner.jpg') }}" alt="banner">
 
@@ -58,6 +59,7 @@
         @method('DELETE')
         <button type="submit" class="btn btn-danger">Supprimer</button>
     </form>
+    </div>
     <script>
         const swiper = new Swiper('.swiper-container', {
             slidesPerView: 3,

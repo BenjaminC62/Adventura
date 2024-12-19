@@ -20,9 +20,14 @@ html {
     overflow-x : hidden;
     min-height: 100vh;
 }
-body {
-    /* Margin bottom by footer height */
-    margin-bottom: 30px;
+
+@font-face {
+    font-family: "Rubik";
+    src:
+        local("Rubik"),
+        url("/resources/fonts/static/Rubik-Regular.ttf") format("ttf"),
+        url("/resources/fonts/static/Rubik-Black.ttf") format("ttf"),
+        url("/resources/fonts/static/Rubik-SemiBold.ttf") format("ttf");
 }
 
 main {
@@ -31,18 +36,54 @@ main {
     align-items: center;
     justify-content: center;
     background-color: var(--light);
+
+}
+
+footer {
+    background-color: var(--green);
+    color: var(--light);
+    padding: 16px 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
 }
 
-footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
+.footer-left, .footer-right{
+    width: 50%;
+}
 
-    /* Set the fixed height of the footer here */
-    height: 30px;
-    background-color: #f5f5f5;
+.footer-left{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 16px;
+}
+
+h5{
+    font-size: 1.1rem;
+}
+
+.footer-right h5{
+    margin-bottom: 16px;
+}
+
+.socials ul{
+    display: flex;
+    justify-content: flex-start;
+    gap: 16px;
+}
+
+.social-item img{
+    width: 60px;
+    object-fit: cover;
+}
+
+.show-user-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .app-info {
@@ -53,6 +94,12 @@ footer {
     border: 1px solid #333;
     border-radius: 5px;
     box-shadow: #333333 2px 2px 2px;
+}
+
+.contact-container-main{
+    width: 80%;
+    margin: 0 auto;
+    position: relative;
 }
 
 nav {
@@ -75,11 +122,12 @@ nav {
 
 body{
     font-size: 16px;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Rubik', sans-serif;
     background-color: var(--brown);
     padding: 16px 32px;
     overflow-x: hidden;
     min-height: 100vh;
+    margin-bottom: 30px;
 }
 
 /* HEADER */
@@ -89,15 +137,20 @@ body{
 .menu{
     background-color: var(--light);
     border-radius: 20px 20px 0 0;
+    text-align: center;
+}
+
+.menu :hover {
+    color: var(--orange);
+    text-decoration: none;
 }
 
 .menu-container{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 0 auto;
-    padding: 16px;
-    max-width: 1200px; /* Largeur maximale */
+    margin: 0 auto; 
+    padding: 16px 32px; /* Largeur maximale */
 }
 
 .logo-header{
@@ -112,7 +165,8 @@ body{
 }
 
 .menu-item{
-    font-size: 1.2rem;
+    font-size: 1.1rem;
+    font-weight: bold;
 }
 
 .user-info {
@@ -140,9 +194,14 @@ body{
 
 h1 {
     font-size: 4rem;
+    font-weight: 800;
     line-height: 1.2;
     text-transform: uppercase;
     text-align: center; /* Centrer le texte */
+}
+
+h2{
+    font-weight: 600;
 }
 
 p{
@@ -157,7 +216,7 @@ ul{
 a{
     text-decoration: none;
     color: var(--brown);
-    text-transform: capitalize;
+    text-transform: none;
 }
 
 .btn{
@@ -188,11 +247,15 @@ button{
     cursor: pointer;
 }
 
-footer{
-    background-color: var(--light);
-    padding: 16px 0;
-    border-radius: 0 0 20px 20px;
+.users-list-container{
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
+
+
 .contact-content {
     position: relative;
     display: flex;
@@ -322,6 +385,7 @@ footer{
     justify-content: center;
     align-items: center;
     height: 100vh;
+    position: relative;
 }
 
 .register-form {
@@ -401,6 +465,7 @@ footer{
     justify-content: center;
     align-items: center;
     height: 100vh;
+    position: relative;
 }
 
 .login-form {
@@ -542,27 +607,37 @@ footer{
     display: flex;
     align-items: center;
     margin: 0 auto;
+    position: relative;
+    padding: 0 128px;
 }
 
 .photo-accueil{
-    width: 764px;
-    height: 607px;
+    width:70%;
+    height: 500px;
+    object-fit: cover;
     z-index: 1;
-    position: relative;
-    margin-right: 525px;
     border-radius: 5px;
 }
 
 .welcome-guide{
-    z-index: 1000;
+    z-index: 10;
     position: absolute;
-    left: 47%;
     background-color: var(--light);
-    box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.5);
-    top: 250px;
+    box-shadow: -1px 5px 3px rgba(0, 0, 0, 0.3);
     border-radius: 20px;
-    padding-right: 130px;
-    padding-left: 263px;
+    padding: 0 32px;
+    right: 0;
+    width: 800px;
+}
+
+.welcome-guide h1{
+    margin: 1rem 0;
+}
+
+.welcome-guide p{
+    text-align: justify;
+    padding: 1rem 0;
+    height: 150px;
 }
 .titre-users {
     text-align: center;
@@ -597,6 +672,7 @@ footer{
 .user-list {
     list-style: none;
     padding: 0;
+    width: 100%;
     max-width: 1000px;
     background: linear-gradient(135deg, #FAEDCA, var(--brown));
     border-radius: 15px;
@@ -685,7 +761,6 @@ footer{
 }
 
 .form-voyage-edit{
-    color: black;
 }
 
 .voyage-text-area-edit {
@@ -695,18 +770,17 @@ footer{
 
 /* Ensure the form container is centered and balanced */
 .form-voyage-edit {
-    display: grid;
-    grid-template-areas:
-        "image title"
-        "image description"
-        "image resume"
-        "continents public"
-        "continents button";
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
+    color: black;
+    display: flex;
+    justify-content: space-between;
+    gap: 64px;
     padding: 20px;
-    width: 900px;
+    width: 100%;
     margin: auto;
+}
+
+main>div{
+    width: 100%;
 }
 
 /* Ensure text areas have consistent width */
@@ -766,7 +840,7 @@ footer{
     border: 2px dashed var(--brown);
     background-color: #FAEDCA;
     width: 100%;
-    height: 200px;
+    height: 100%;
     border-radius: 10px;
     font-size: 2rem;
     color: var(--brown);
@@ -788,16 +862,41 @@ label {
     grid-area: resume;
 }
 
+.creer-div-container{
+    width: 80%;
+    margin: 0 auto;
+}
+
 /* Section continents */
 .continents {
-    grid-area: continents;
     display: flex;
-    gap: 10px;
-    justify-content: start;
-    width: 90px;
-    heigth: 40%;
+    justify-content: space-between;
     padding: 2px;
     margin-bottom: 24px;
+    width: 100%;
+}
+
+.left-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 50%;
+}
+
+.right-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding-bottom: 2rem;
+    width: 50% ;
+}
+
+.continents img{
+    width: 80px;
+    display: block;
+    padding: 16px 8px;
+    border-radius: 10px;
+    border: 1px dashed var(--brown);
 }
 
 
@@ -826,11 +925,80 @@ label {
     align-items: center;
 }
 
-.public-section input {
-    width: 20px;
-    height: 20px;
-    margin-right: 10px;
+.main-image-section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
 }
+
+.visuel-label{
+    width: 100%;
+    height: 100%;
+}
+
+.public-section input {
+    position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.checkbox-container{
+    display: block;
+  position: relative;
+  padding-left: 30px;
+  margin-bottom: 24px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.checkbox-container:hover input ~ .checkmark {
+    background-color: #ccc;
+  }
+
+  .checkbox-container input:checked ~ .checkmark {
+    background-color: var(--orange);
+  }
+
+.checkmark{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color: var(--light);
+  border: 1px solid var(--brown);
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+
+  /* Show the checkmark when checked */
+.checkbox-container input:checked ~ .checkmark:after {
+    display: block;
+  }
+
+  /* Style the checkmark/indicator */
+.checkbox-container .checkmark:after {
+    left: 8px;
+    top: 4px;
+    width: 3px;
+    height: 8px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
 
 .submit-section {
     display: flex;
@@ -1304,4 +1472,11 @@ input.voyage-text-area-edit {
     text-decoration: none;
     border-radius: 5px;
     transition: background-color 0.3s ease;
+}
+
+.img-shape{
+    position: absolute  ;
+    bottom: 0;
+    right: 0;
+    width: 400px;
 }

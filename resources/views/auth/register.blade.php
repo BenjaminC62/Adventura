@@ -36,5 +36,6 @@
                 <p class="form-link">Déjà enregistré? <a href="{{ route('login') }}">Connectez-vous</a></p>
             </div>
         </div>
+        <img class="img-shape" src="{{ Vite::asset('resources/images/img-shape.png')}}" alt="">
     </div>
 </x-app>
