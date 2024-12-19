@@ -138,6 +138,6 @@ class VoyageController extends Controller
             $voyage->likes()->attach($user->id);
         }
 
-        return redirect()->route('voyage.show', ['voyage' => $voyage->id]);
+        return redirect()->route('voyage.index', ['voyage' => $voyage->id]);
     }
 }
