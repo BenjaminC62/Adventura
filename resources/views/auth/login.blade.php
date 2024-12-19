@@ -26,5 +26,6 @@
                 <p class="form-link">Pas encore inscrit? <a href="{{ route('register') }}">Inscrivez-vous</a></p>
             </div>
         </div>
+        <img class="img-shape" src="{{ Vite::asset('resources/images/img-shape.png')}}" alt="">
     </div>
 </x-app>
