@@ -107,8 +107,7 @@ body{
 
 
 .logo-header img{
-    border: 1px solid black;
-    width: 100px;
+    width: 200px;
     height: 100px;
 }
 
@@ -546,11 +545,12 @@ footer{
 }
 
 .photo-accueil{
-    width: 540px;
-    height: 400px;
+    width: 764px;
+    height: 607px;
     z-index: 1;
     position: relative;
     margin-right: 525px;
+    border-radius: 5px;
 }
 
 .welcome-guide{
@@ -561,6 +561,8 @@ footer{
     box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.5);
     top: 250px;
     border-radius: 20px;
+    padding-right: 130px;
+    padding-left: 263px;
 }
 .titre-users {
     text-align: center;
@@ -792,6 +794,15 @@ label {
     display: flex;
     gap: 10px;
     justify-content: start;
+    width: 90px;
+    heigth: 40%;
+    padding: 2px;
+    margin-bottom: 24px;
+}
+
+
+.continent-radio {
+    display: none;
 }
 
 .continent-checkbox {
@@ -799,6 +810,7 @@ label {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
 }
 
 .continent-checkbox input {
@@ -1081,13 +1093,12 @@ input.voyage-text-area-edit {
 .voyage-detail .avis p {
     color: #5A3921;
 }
-/* Horizontal Timeline styles with central bar and alternating steps */
 .timeline {
     display: flex;
-    overflow-x: auto;
+    overflow-x: auto; /* Permet le défilement horizontal */
     padding: 20px 0;
     position: relative;
-    white-space: nowrap;
+    white-space: nowrap; /* Garde tous les éléments sur une seule ligne */
 }
 
 .timeline::before {
@@ -1097,9 +1108,11 @@ input.voyage-text-area-edit {
     background-color: #D3C1A5;
     top: 50%;
     left: 0;
-    right: 0;
     transform: translateY(-50%);
     z-index: 1;
+    width: calc(100% + 3100px); /* Étend la barre centrale au-delà des bords visibles */
+    min-width: 100vw; /* La barre couvre toute la largeur visible */
+    pointer-events: none;
 }
 
 .timeline-item {
@@ -1137,6 +1150,20 @@ input.voyage-text-area-edit {
     font-weight: bold;
     margin-bottom: 10px;
     text-align: center;
+}
+
+.timeline-item .timeline-content {
+    pointer-events: none;
+}
+
+.timeline-item .city {
+    pointer-events: auto;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.timeline-item .city:hover {
+    color: var(--orange);
 }
 
 .timeline-content {
@@ -1182,4 +1209,99 @@ input.voyage-text-area-edit {
 
 .btn-voyage:hover {
     background-color: #B77F66;
+}
+
+/* resources/css/app.css */
+.form-container {
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #FAECDA;
+    border: 1px solid #D3C1A5;
+    border-radius: 5px;
+    max-width: 1200px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.form-container label {
+    display: block;
+    margin-bottom: 10px;
+    color: #5A3921;
+    font-weight: bold;
+}
+
+.form-container input[type="text"],
+.form-container textarea {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #D3C1A5;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    min-height: 400px;
+    min-width: 800px;
+}
+
+.form-container button {
+    background-color: #8D5C43;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.form-container button:hover {
+    background-color: #B77F66;
+}
+
+.message {
+    font-size: 1.2rem;
+    color: #8D5C43;
+    margin-bottom: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* resources/css/app.css */
+.etape-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: var(--light);
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.etape-container h1 {
+    font-size: 2em;
+    margin-bottom: 10px;
+    color: var(--brown);
+}
+
+.etape-container p {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    color: var(--brown);
+}
+
+.etape-container .media img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.etape-container .actions {
+    display: flex;
+    gap: 10px;
+}
+
+.etape-container .btn {
+    padding: 10px 20px;
+    background-color: var(--orange);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
 }
