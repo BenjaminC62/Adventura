@@ -1,159 +1,108 @@
-## Invitation aux voyages
+# 🌍 Carnet de Voyage en Ligne
 
-Groupe test but24_groupe7-marathon-404-creatifs
+## ✨ Description du Projet
 
-## Version initiale
+Bienvenue sur le **Carnet de Voyage en Ligne**, une plateforme interactive qui centralise et partage les expériences de voyage en van. Ce projet, conçu en moins de 36 heures, a été réalisé par une équipe multidisciplinaire de 8 membres :
 
-Pour lancer avec succès une première version de votre site web pendant la phase de développement, il faut exécuter les
-commandes suivantes sur votre machine de développement :
+- 🖥️ **4 développeurs**
+- 🎨 **4 étudiants MMI** (Métiers du Multimédia et de l'Internet)
 
-```shell
-# A partir de la racine de votre projet
+🎯 **Objectif** : Fournir une solution fonctionnelle permettant aux utilisateurs de documenter leurs aventures et d'inspirer d'autres passionnés de voyages.
 
-# installation des dépendances
-composer install 
+---
 
-# installation des outils pour la construction du front
-npm install 
-# Modification du front en cours de développement
-npm run dev
-# Construction du front pour la version exploitation
-npm run build
+## 🚀 Fonctionnalités
 
-# liaison avec le SGBD et la base de données utilisée
-cp .env.example .env
+- 📚 **Partage d'expériences** : Créez des carnets de voyage, ajoutez des photos et partagez vos itinéraires.
+- 🔍 **Exploration** : Découvrez des destinations inspirantes à travers les carnets d'autres utilisateurs.
+- 👤 **Gestion de profil** : Inscrivez-vous, connectez-vous et personnalisez votre profil.
+- 🗺️ **Cartographie interactive** : Visualisez vos trajets sur une carte intégrée.
+- 💡 **Interface intuitive** : Design ergonomique et adapté à tous les supports.
+
+---
+
+## 🛠️ Technologies Utilisées
+
+- **Backend** : PHP Laravel
+- **Frontend** : HTML, CSS, JavaScript
+- **Base de Données** : MySQL
+- **Outils** : Composer, npm, GitLab CI/CD
+
+---
+
+## 🖥️ Installation et Lancement en Local
+
+Pour exécuter le projet sur votre machine locale, suivez ces étapes :
+
+1. **Cloner le dépôt** :
+   ```bash
+   git clone https://gitlab.univ-artois.fr/votre-projet.git
+   cd votre-projet
+   ```
+   
+2. **Installer les dépendances** :
+
+    ```bash
+    composer install
+    npm install
+    ```
+    
+3. **Configurer l'environnement**:
+
+   ```bash
+   cp .env.example .env
+   ```
+
+Modifiez les variables suivantes dans le fichier `.env` :
+
+   ```bash
+   DB_CONNECTION=sqlite
+   # DB_DATABASE=/chemin/vers/votre/base.sqlite
+   ```
+
+4. **Générer une clé d'application**:
+
+   ```bash
+   php artisan key:generate
+   ```
+
+5. **Générer une clé d'application**:
+
+   ```bash
+   php artisan migrate
+   ```
+
+6. **Générer une clé d'application**:
+
+   ```bash
+   php artisan serve
+   ```
+
+🌐 Accédez à l'application : http://localhost:8000
+
+---
+
+## 👥 Équipe
+### Développeurs 🖥️
+
+- Cornet Benjamin
+- Morel Mathias
+- Dalmasso Mathéo
+- Caillieret Simon
+
+### Étudiants MMI 🎨
+
+- Lestriez
+- Deltour Léa
+- Peuvrel Noah
+- Lepers Sharleen 
+
+## 📜 Licence
+
+Ce projet est sous licence MIT.
+
+💌 Merci pour votre intérêt pour notre projet ! N'hésitez pas à contribuer ou à nous partager vos retours. 🌟
 
 
-#########################################################
-#
-# Ici il faut modifier en particulier les variables suivantes
-#
-DB_CONNECTION=sqlite
-# DB_HOST=127.0.0.1
-# DB_PORT=3306
-# DB_DATABASE=marathon_24
-# DB_USERNAME=root
-# DB_PASSWORD=
-#
-#
-#########################################################
 
-# Génération de la clé initiale
-
-php artisan key:generate
-
-# génération des tables dans votre base de données
-
-php artisan migrate
-
-# ou pour ré-initialiser
-
-php artisan migrate:fresh
-
-# Initialisation des données de départ
-
-cp -r resources/images storage/app/public
-
-# Création du lien physique en storage/app/public et public/storage
-
-php artisan storage:link
-
-# Ajout de données aléatoire dans les tables de la base de données
-
-php artisan db:seed
-
-# Lancement de l'application web pour le développement
-
-php artisan serve
-```
-
-Si toutes les commandes précédentes ont été exécutées, votre application doit être accessible à
-l'adresse [http://localhost:8000](http://localhost:8000)
-
-## Le déploiement sur la machine marathon
-
-Chaque modification de la branche main de votre projet sur [gitlab](https://gitlab.univ-artois.fr) entraine le
-déploiement de votre site sur la machine marathon.
-
-### Création des variables d'environnement
-
-Pour que le déploiement se déroule bien, il faut configurer deux variables dans votre projet sur gitlab.
-
-- Une variable `NAME` qui doit contenir votre nom de login sur la machine marathon qui vous a été délivré en début de
-  marathon.
-- Une variable `SSH_PRIVATE_KEY` qui doit contenir votre clé privée qui a été calculée pour vous et qui se trouve dans
-  le fichier `~/.ssh/id_rsa` sur la machine marathon.
-
-Pour modifier ces 2 variables, il faut
-
-1. afficher dans votre navigateur, la page de votre projet sur gitlab.
-
-   ![](./resources/docs/images/projet_gitlab.png)
-
-2. Puis sélectionner _Paramètres_ ou _Setting_ et l'entrée _intégration et livraisons continues_ ou _CI/CD_.
-
-   ![](./resources/docs/images/entree_variables.png)
-
-3. Créez la variable `NAME`
-
-   ![](./resources/docs/images/cle_name.png)
-4. Créez la variable `SSH_PRIVATE_KEY`
-
-   ![](./resources/docs/images/cle_ssh_private_key.png)
-
-### Commandes sur la machine marathon
-
-Lors du premier déploiement, vous devez initialiser l'environnement de votre site sur le serveur marathon.
-
-Comme, la connexion avec la base de données.
-Pour cela, vous devez à nouveau modifier le fichier `.env`.
-
-Les commandes à taper lors du premier déploiement :
-
-```shell
-# liaison avec le SGBD et la base de données utilisée
-cp .env.example .env
-
-#########################################################
-#
-# Ici il faut modifier en particulier les variables suivantes
-#
-# DB_CONNECTION=mysql
-# DB_HOST=127.0.0.1
-# DB_PORT=3306
-# DB_DATABASE=but24_groupeXX
-# DB_USERNAME=but24_groupeXX
-# DB_PASSWORD=password_but24_groupeXX
-#
-#
-#########################################################
-
-# Génération de la clé initiale
-
-php artisan key:generate
-
-# génération des tables dans votre base de données
-
-php artisan migrate
-
-# ou pour ré-initialiser
-
-php artisan migrate:fresh
-
-# Initialisation des données de départ
-
-cp -r resources/images storage/app/public
-
-# Création du lien physique en storage/app/public et public/storage
-
-php artisan storage:link
-
-# Ajout de données aléatoire dans les tables de la base de données
-
-php artisan db:seed
-
-```
-
-À partir de là, votre site doit être visible avec l'url : `http://marathon/~but24_groupeXX` avec `XX` votre numéro
-de groupe.
 
