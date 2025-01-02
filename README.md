@@ -92,7 +92,7 @@ Modifiez les variables suivantes dans le fichier `.env` :
 
 ### Étudiants MMI 🎨
 
-- Lestriez
+- Lestriez Jade
 - Deltour Léa
 - Peuvrel Noah
 - Lepers Sharleen 
