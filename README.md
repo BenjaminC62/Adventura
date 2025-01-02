@@ -4,7 +4,7 @@
 
 Bienvenue sur le **Carnet de Voyage en Ligne**, une plateforme interactive qui centralise et partage les expériences de voyage en van. Ce projet, conçu en moins de 36 heures, a été réalisé par une équipe multidisciplinaire de 8 membres :
 
-- 🖥️ **4 développeurs**
+- 🖥️ **4 étudiants INFO**
 - 🎨 **4 étudiants MMI** (Métiers du Multimédia et de l'Internet)
 
 🎯 **Objectif** : Fournir une solution fonctionnelle permettant aux utilisateurs de documenter leurs aventures et d'inspirer d'autres passionnés de voyages.
