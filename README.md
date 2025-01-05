@@ -107,17 +107,17 @@ Modifiez les variables suivantes dans le fichier `.env` :
 ## 👥 Équipe
 ### Développeurs 🖥️
 
-- Cornet Benjamin
-- Morel Mathias
-- Dalmasso Mathéo
-- Caillieret Simon
+- <a href="https://www.linkedin.com/in/benjamin-cornet62/">Cornet Benjamin</a>
+- <a href="https://www.linkedin.com/in/mathias-morel-753951329/?lipi=urn%3Ali%3Apage%3Ad_flagship3_people_connections%3BOMAvfhkvQe6bYS2GTUkObQ%3D%3D">Morel Mathias</a>
+- <a href="https://www.linkedin.com/in/math%C3%A9o-dalmasso-2aa140340/?lipi=urn%3Ali%3Apage%3Ad_flagship3_people_connections%3BOMAvfhkvQe6bYS2GTUkObQ%3D%3D"> Dalmasso Mathéo</a>
+- <a href="https://www.linkedin.com/in/simon-caillieret-a8996229a/?lipi=urn%3Ali%3Apage%3Ad_flagship3_people_connections%3BOMAvfhkvQe6bYS2GTUkObQ%3D%3D"> Caillieret Simon</a>
 
 ### Étudiants MMI 🎨
 
-- Lestriez Jade
+- <a href="https://www.linkedin.com/in/jade-lestriez/?lipi=urn%3Ali%3Apage%3Ad_flagship3_people_connections%3BWt4oJ6gGTV2401u1bMKNYw%3D%3D">Lestriez Jade<a/>
 - <a href="https://www.linkedin.com/in/l%C3%A9a-deltour-bb32aa247/?lipi=urn%3Ali%3Apage%3Ad_flagship3_people_connections%3BRqBDh1%2BtS1SlwQSNeFzT4A%3D%3D">Deltour Léa</a>
-- Peuvrel Noah
-- Lepers Sharleen 
+- <a href="https://www.linkedin.com/in/noah-peuvrel-99630b32a?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAFL708IB59T-7ueI39Pur08MSUMuSBhZO4M&lipi=urn%3Ali%3Apage%3Ad_flagship3_search_srp_all%3BpHwosXZjTcqSA6%2F0Fgiy8g%3D%3D">Peuvrel Noah </a>
+- <a href="https://www.linkedin.com/in/sharleen-lepers/?lipi=urn%3Ali%3Apage%3Ad_flagship3_people_connections%3BRuJe%2BEOwRMCK6Ih9XeD43g%3D%3D">Lepers Sharleen </a>
 
 ## 📜 Licence
 
