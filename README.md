@@ -23,11 +23,33 @@ Bienvenue sur le **Carnet de Voyage en Ligne**, une plateforme interactive qui c
 
 ## 🛠️ Technologies Utilisées
 
-- **Backend** : PHP Laravel
-- **Frontend** : HTML, CSS, JavaScript
-- **Base de Données** : MySQL
-- **Outils** : Composer, npm, GitLab CI/CD
-
+- **Backend** :
+  <br/>
+  <img src="https://skillicons.dev/icons?i=php" height="40" alt="php logo"  />
+  <img width="12" />
+  <img src="https://skillicons.dev/icons?i=laravel" height="40" alt="laravel logo"  />
+- **Frontend** :
+  <br/>
+  <img src="https://skillicons.dev/icons?i=html" height="40" alt="html5 logo"  />
+  <img width="12" />
+  <img src="https://skillicons.dev/icons?i=css" height="40" alt="css3 logo"  />
+  <img width="12" />
+  <img src="https://skillicons.dev/icons?i=js" height="40" alt="javascript logo"  />
+- **Base de Données** :
+  <br/>
+  <img src="https://skillicons.dev/icons?i=sqlite" height="40" alt="sqlite logo"  />
+- **Outils** :
+  <br/>
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/composer/composer-original.svg" height="40" alt="composer logo"  />
+  <img width="12" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/npm/npm-original-wordmark.svg" height="40" alt="npm logo"  />
+  <img width="12" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/gitlab/gitlab-original.svg" height="40" alt="gitlab logo"  />
+  <img width="12" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/phpstorm/phpstorm-original.svg" height="40" alt="phpstorm logo"  />
+  <img width="12" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" height="40" alt="vscode logo"  />
+  
 ---
 
 ## 🖥️ Installation et Lancement en Local
@@ -93,7 +115,7 @@ Modifiez les variables suivantes dans le fichier `.env` :
 ### Étudiants MMI 🎨
 
 - Lestriez Jade
-- Deltour Léa
+- <a href="https://www.linkedin.com/in/l%C3%A9a-deltour-bb32aa247/?lipi=urn%3Ali%3Apage%3Ad_flagship3_people_connections%3BRqBDh1%2BtS1SlwQSNeFzT4A%3D%3D">Deltour Léa</a>
 - Peuvrel Noah
 - Lepers Sharleen 
 
